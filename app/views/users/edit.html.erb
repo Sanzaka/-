@@ -1,0 +1,23 @@
+<h3>ユーザー情報変更</h3>
+<div class="box">
+  <div class="guide">
+    <center>名前</center>
+    <center>メールアドレス</center>
+    <center>自己紹介(任意)</center>
+    <center>画像(任意)</center>
+    <center>メールを受け取る？</center>
+  </div>
+  <%= form_with model:@user, local:true do |f| %>
+    <div class="enter">
+      <%= f.text_field :name %>
+      <%= f.text_field :email %>
+      <%= f.text_area :intro %>
+      <%= f.attachment_field :image %>
+      <%= f.radio_button :is_email_receive, :true %>
+      <%= f.label :is_email_receive, "受け取る", value: true %>
+      <%= f.radio_button :is_email_receive, :false %>
+      <%= f.label :is_email_receive, "受け取らない", value: false %>
+    </div>
+    <%= f.submit "変 更", class: "big_btn" %>
+  <%end%>
+</div>

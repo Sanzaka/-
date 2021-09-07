@@ -53,4 +53,4 @@ https://docs.google.com/spreadsheets/d/178dycEylNMqOj1b7khhm3Ysf7JPfD8EfsSyuCKvb
 - IDE：Cloud9
 
 ## 使用素材
-- (使用します。この欄に、使用した素材のURLなど、その他権利上必要な事項を記載します。)
+- カラーイメージ()

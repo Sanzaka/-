@@ -1,0 +1,29 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$space: 30px;
+
+
+.user_show{
+* {text-align:center;}
+  .info{
+    .image{
+      border-radius: 30px;
+      margin-bottom: $space;
+    }
+    .name{
+      margin-bottom: $space;
+    }
+    .intro{
+      margin-bottom: $space;
+    }
+    .edit_link{
+      div{
+        margin: 0 auto;
+      }
+    }
+  }
+  .main{
+
+  }
+}
