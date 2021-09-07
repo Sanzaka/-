@@ -16,4 +16,4 @@
 //= require_tree .
 
 //= require chartkick
-//= require chart.bund
+//= require Chart.bundle
