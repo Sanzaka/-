@@ -21,6 +21,8 @@ $light_blue: #A0D3D9;
 $blue: #394D59;
 $navy_blue: #141F26;
 
+$space: 30px;
+
 
 // 複数のページで用いるレイアウトはこちらに記載
 *{
@@ -48,25 +50,59 @@ $navy_blue: #141F26;
 .green_btn{
   width: 100px;
   height: 50px;
-  background-color: #4F8C32;
+  background-color: $green;
   margin-right: 20px;
   text-align: center;
   line-height: 50px;
   border-radius: 15px;
   color: white;
+  margin: 0 auto;
 }
 
+.red_btn{
+  width: 150px;
+  height: 50px;
+  background-color: red;
+  margin-right: 20px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 15px;
+  color: white;
+  margin: 30px auto;
+}
 
 // submit用暫定
 .big_btn{
   font-size: 20px;
-  width: 100px;
+  width: 150px;
   height: 50px;
-  border: 2px solid #4F8C32;
-  background-color: lightgreen;
+  border-radius: 15px;
+  background-color: $green;
+  color: white;
+  border: 0;
+}
+
+//form
+.text_form{
+  width: 40%;
+  margin: 0 auto;
+  .field{
+    padding-bottom: $space;
+    display: flex;
+    justify-content: space-between;
+    .text_area{
+      width: 200px;
+      height: 100px;
+    }
+  }
+  .action{
+    display: flex;
+    justify-content: center;
+  }
 }
 
 
+//application
 body{
   background-color: $white;
   // 最下部にフッターを固定させるための記述

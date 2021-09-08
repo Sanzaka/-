@@ -1,0 +1,36 @@
+<div class="text_form">
+
+  <h2>グループ新規作成</h2>
+
+  <%= form_with model: @group, local: true do |f| %>
+
+    <div class="field">
+      <%= f.label :name, "グループ名" %>
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :intro, "グループ紹介" %>
+      <%= f.text_area :intro %>
+    </div>
+
+    <div class="field">
+      <%= f.label :image, "グループ画像（任意）" %>
+      <%= f.attachment_field :image %>
+    </div>
+
+    <div class="field">
+      <%= f.label :group_type, "ワークグループ", value: "work_group" %>
+      <%= f.radio_button :group_type, "work_group", checked: true %><br>
+
+      <%= f.label :group_type, "フレンドグループ", value: "friend_group" %>
+      <%= f.radio_button :group_type, "friend_group" %>
+    </div>
+
+    <div class="action">
+      <%= f.submit "グループ作成", class: "big_btn" %>
+    </div>
+
+  <%end%>
+
+</div>

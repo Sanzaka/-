@@ -16,8 +16,18 @@
   </div>
   <div class="main">
     <h3>メニュー</h3>
-    <div>人気グループ</div>
-    <!--グループランキング機能実装予定-->
+    <div class="group">
+      <h3>人気グループ</h3>
+      <!--グループランキング機能実装予定-->
+      <%= link_to groups_path, class: "edit_link" do %>
+        <div class="green_btn">グループ一覧</div>
+      <%end%>
+      <%= link_to new_group_path, class: "edit_link" do %>
+        <div class="green_btn">グループ作成</div>
+      <%end%>
+    </div>
+
+
     <div>人気ユーザー</div>
     <!--ユーザーランキング機能実装予定（いいね数）-->
     <div class="search">

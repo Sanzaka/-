@@ -1,23 +1,35 @@
 <h3>ユーザー情報変更</h3>
-<div class="box">
-  <div class="guide">
-    <center>名前</center>
-    <center>メールアドレス</center>
-    <center>自己紹介(任意)</center>
-    <center>画像(任意)</center>
-    <center>メールを受け取る？</center>
+<div class="text_form">
+
+  <%= form_with model: @user, local: true do |f| %>
+
+  <div class="field">
+    <%= f.label :name, "ユーザー名" %>
+    <%= f.text_field :name, autofocus: true %>
   </div>
-  <%= form_with model:@user, local:true do |f| %>
-    <div class="enter">
-      <%= f.text_field :name %>
-      <%= f.text_field :email %>
-      <%= f.text_area :intro %>
-      <%= f.attachment_field :image %>
-      <%= f.radio_button :is_email_receive, :true %>
-      <%= f.label :is_email_receive, "受け取る", value: true %>
-      <%= f.radio_button :is_email_receive, :false %>
-      <%= f.label :is_email_receive, "受け取らない", value: false %>
-    </div>
-    <%= f.submit "変 更", class: "big_btn" %>
-  <%end%>
+
+  <div class="field">
+    <%= f.label :intro, "自己紹介" %>
+    <%= f.text_area :intro, class: "text_area" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "グループ画像（任意）" %>
+    <%= f.attachment_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :is_email_receive, "メールを受け取る", value: true %>
+    <%= f.radio_button :is_email_receive, :true, checked: true %><br>
+
+    <%= f.label :is_email_receive, "メールを受け取らない", value: false %>
+    <%= f.radio_button :is_email_receive, :false %>
+  </div>
+
+  <div class="action">
+    <%= f.submit "ユーザー変更", class: "big_btn" %>
+  </div>
+
+<%end%>
+
 </div>
