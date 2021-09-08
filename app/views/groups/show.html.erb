@@ -1,0 +1,63 @@
+<div>通知機能表示欄</div>
+<div class="container group_show">
+  <div class="info">
+
+    <h3>グループ情報</h3>
+
+    <div class="type">
+      <%= @group.group_type %>
+    </div>
+    <%= attachment_image_tag @group, :image, format: "jpeg", size: "100x100", class: "image"%>
+
+    <div class="name">
+      NAME<br><%= @group.name %>
+    </div>
+
+    <div class="intro">
+      INTRO<br>
+      <%= @group.intro %>
+    </div>
+
+    <%= link_to edit_group_path, class: "edit_link" do %>
+      <div class="green_btn">情報変更</div>
+    <%end%>
+  </div>
+
+  <div class="main">
+
+    <h3>データ</h3>
+    <div class="data">
+      <%= link_to root_path, class: "edit_link" do %>
+        <div class="green_btn">目標入力</div>
+      <%end%>
+      <%= link_to root_path, class: "edit_link" do %>
+        <div class="green_btn">結果入力</div>
+      <%end%>
+    </div>
+
+    <div class="calendar">
+      カレンダー未設定
+    </div>
+
+    <div class="object">
+      <h1>今日の目標</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>ユーザーネーム</th><th>目標</th><th>達成%</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>未設定</td><td>未設定</td><td>未設定</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="graph">
+      <h3>一週間達成度比較</h3>
+      グラフ未設定
+    </div>
+  </div>
+</div>

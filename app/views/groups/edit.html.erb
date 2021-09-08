@@ -1,0 +1,36 @@
+<h3>グループ変更</h3>
+<div class="text_form">
+
+  <%= form_with model: @group, local: true do |f| %>
+
+    <div class="field">
+      <%= f.label :name, "グループ名" %>
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :intro, "グループ紹介" %>
+      <%= f.text_area :intro, class: "text_area" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :image, "グループ画像（任意）" %>
+      <%= f.attachment_field :image %>
+    </div>
+
+    <div class="field">
+      <h3>*グループタイプの変更はできません</h3>
+    </div>
+
+    <div class="action">
+      <%= f.submit "グループ変更", class: "big_btn" %>
+    </div>
+
+  <%end%>
+
+  <%= link_to group_path(@group.id), method: :delete, class: "edit_link" do %>
+    <div class="red_btn">グループを削除</div>
+  <%end%>
+
+
+</div>
