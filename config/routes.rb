@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   resources :users, only:[:show, :edit, :update]
 
-  resources :groups
   get "group/:id/data" => "groups#data", as: "group_data"
+  resources :groups do
+    resources :group_members, only: [:create, :destroy, :index]
+  end
+
 end

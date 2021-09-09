@@ -56,18 +56,49 @@ $space: 30px;
   }
 }
 
-//editページ
-// .edit_group{
-//   width: 40%;
-//   margin: 0 auto;
-//   .field{
-//     padding-bottom: $space;
-//     display: flex;
-//     justify-content: space-between;
-//     .text_area{
-//       width: 200px;
-//       height: 100px;
-//     }
-//   }
-//   .action{}
-// }
+
+// index
+.group_index{
+  h3{
+    text-align: center;
+    padding-bottom: $space;
+  }
+
+  .borderless_table{
+    width: 45%;
+    margin: 0 auto;
+    thead{
+
+      tr{
+
+        .th1{
+          padding: 5px;
+          width: 100px;
+        }
+        .th2{
+          padding: 5px;
+          width: 200px;
+        }
+        .th3{
+          padding: 5px;
+          width: 100px;
+        }
+      }
+    }
+    tbody{
+      tr{
+        
+        .td1{
+          text-align: center;
+        }
+        .td2{
+          text-align: center;
+        }
+        .td3{
+          text-align: center;
+        }
+      }
+    }
+  }
+
+}

@@ -6,5 +6,7 @@ class User < ApplicationRecord
          
   attachment :image
   
+  has_many :group_members, dependent: :destroy
+  has_many :group, through: :group_members
   
 end
