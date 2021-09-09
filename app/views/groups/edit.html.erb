@@ -28,7 +28,7 @@
 
   <%end%>
 
-  <%= link_to group_path(@group.id), method: :delete, class: "edit_link" do %>
+  <%= link_to group_path(@group.id), method: :delete, data: {confirm: "グループを削除した場合、元に戻すことはできません。本当によろしいですか？"}, class: "edit_link" do %>
     <div class="red_btn">グループを削除</div>
   <%end%>
 

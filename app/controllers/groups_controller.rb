@@ -6,6 +6,8 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @group_member = GroupMember.new
+    @group_members = GroupMember.all
   end
 
   def new
