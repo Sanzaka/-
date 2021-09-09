@@ -27,3 +27,5 @@
     <%= f.submit "次へ進む", class: "big_btn" %>
   </div>
   <%end%>
+  
+  テスト
