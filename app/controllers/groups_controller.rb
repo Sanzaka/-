@@ -8,6 +8,8 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @entry = Entry.new
     @group_members = GroupMember.all
+    @target = Target.new
+    @today_targets = Target.where(user_id: current_user.id)
   end
 
   def new

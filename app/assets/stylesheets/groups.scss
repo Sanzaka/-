@@ -33,8 +33,18 @@ $space: 30px;
   }
   .main{
     .data{
-      display: flex;
-      justify-content: center;
+      .area{
+        .text_area{
+        border-radius: 5px;
+        height: 50px;
+        width: 200px;
+      }
+      .text_area:focus {
+        outline: none;
+        border: 2px solid #4F8C32;
+      }
+      }
+
       .edit_link{
         margin: 15px 15px;
         div{
@@ -46,8 +56,44 @@ $space: 30px;
       width: 300px;
       height: 200px;
     }
-    .object{
+    .target{
+      table{
+        table-layout: auto;
+        width: 90%;
+        margin: 0 auto;
+        thead{
 
+          tr{
+
+            .th1{
+              padding: 5px;
+              width: 20%
+            }
+            .th2{
+              padding: 5px;
+              width: 50%;
+            }
+            .th3{
+              padding: 5px;
+              width: 20%;
+            }
+          }
+        }
+        tbody{
+          tr{
+
+            .td1{
+              text-align: center;
+            }
+            .td2{
+              text-align: center;
+            }
+            .td3{
+              text-align: center;
+            }
+          }
+        }
+      }
     }
     .graph{
       width: 300px;
@@ -87,7 +133,7 @@ $space: 30px;
     }
     tbody{
       tr{
-        
+
         .td1{
           text-align: center;
         }
@@ -101,4 +147,16 @@ $space: 30px;
     }
   }
 
+}
+
+
+// edit
+.text_area{
+  border-radius: 5px;
+  height: 50px;
+  width: 200px;
+}
+.text_area:focus {
+  outline: none;
+  border: 2px solid #4F8C32;
 }
