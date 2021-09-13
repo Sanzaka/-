@@ -18,6 +18,10 @@
       <%= @group.intro %>
     </div>
 
+    <%= link_to group_entries_path(@group.id), class: "edit_link" do %>
+      <div class="green_btn">加入申請一覧</div>
+    <%end%>
+
     <%= link_to edit_group_path, class: "edit_link" do %>
       <div class="green_btn">情報変更</div>
     <%end%>
@@ -62,14 +66,16 @@
     </div>
 
     <div class="join">
-      <%= form_with(model:[@group, @group_member], local: true) do |f| %>
+      <%= form_with(model:[@group, @entry], local: true) do |f| %>
         <div class="action">
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+          <%= f.hidden_field :group_id, :value => @group.id %>
           <%= f.submit "加入", class: "big_btn" %>
         </div>
       <%end%>
 
     <div class="leave">
-      <%= link_to group_group_member_path(@group, current_user.id), method: :delete, class: "edit_link" do %>
+      <%= link_to group_group_member_path(@group, current_user.id), method: :delete, data: {confirm: "このグループを退会します。本当によろしいですか？"}, class: "edit_link" do %>
         <div class="red_btn">グループ退会</div>
         <%end%>
     </div>
