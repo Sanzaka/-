@@ -1,0 +1,51 @@
+// Place all the styles related to the entries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$space: 30px;
+
+// index
+.entry_index{
+  h3{
+    text-align: center;
+    padding-bottom: $space;
+  }
+
+  .borderless_table{
+    width: 45%;
+    margin: 0 auto;
+    thead{
+
+      tr{
+
+        .th1{
+          padding: 5px;
+          width: 100px;
+        }
+        .th2{
+          padding: 5px;
+          width: 200px;
+        }
+        .th3{
+          padding: 5px;
+          width: 100px;
+        }
+      }
+    }
+    tbody{
+      tr{
+
+        .td1{
+          text-align: center;
+        }
+        .td2{
+          text-align: center;
+        }
+        .td3{
+          text-align: center;
+        }
+      }
+    }
+  }
+
+}
