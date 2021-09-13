@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :groups do
     resources :group_members, only: [:create, :destroy, :index]
     resources :entries, only: [:create, :index, :destroy]
+    resources :targets, only: [:create, :edit, :update, :destroy]
   end
 
 end

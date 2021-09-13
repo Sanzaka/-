@@ -32,11 +32,25 @@
 
     <h3>データ</h3>
     <div class="data">
+      <%= form_with(model: [@group, @target], local: true) do |f| %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.hidden_field :group_id, :value => @group.id %>
+        <div class="area">
+          <%= f.text_area :target_content, placeholder: "今日の目標を一言！", class: "text_area"%>
+        </div>
+
+        <div class="field">
+          <%= f.submit "今日の目標登録", class: "big_btn" %>
+        </div>
+      <%end%>
+
+      <% if false %>
       <%= link_to root_path, class: "edit_link" do %>
         <div class="green_btn">目標入力</div>
       <%end%>
       <%= link_to root_path, class: "edit_link" do %>
         <div class="green_btn">結果入力</div>
+      <%end%>
       <%end%>
     </div>
 
@@ -44,7 +58,7 @@
       カレンダー未設定
     </div>
 
-    <div class="object">
+    <div class="target">
       <h1>今日の目標</h1>
       <table>
         <thead>
@@ -53,9 +67,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>未設定</td><td>未設定</td><td>未設定</td>
-          </tr>
+          <% @today_targets.each do |target| %>
+            <tr>
+              <td><%= target.user.name %></td>
+              <td>
+                <% if target.user_id == current_user.id %>
+                  <%= link_to target.target_content, edit_group_target_path(@group, target.id) %>
+                <%else%>
+                  <%= target.target_content %>
+                <%end%>
+              </td>
+              <td>未設定</td>
+            </tr>
+          <%end%>
         </tbody>
       </table>
     </div>
