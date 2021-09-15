@@ -60,6 +60,45 @@ $space: 30px;
       table{
         table-layout: auto;
         width: 90%;
+        margin: 0 auto 30px;
+        thead{
+
+          tr{
+
+            .th1{
+              padding: 5px;
+              width: 20%
+            }
+            .th2{
+              padding: 5px;
+              width: 50%;
+            }
+            .th3{
+              padding: 5px;
+              width: 20%;
+            }
+          }
+        }
+        tbody{
+          tr{
+
+            .td1{
+              text-align: center;
+            }
+            .td2{
+              text-align: center;
+            }
+            .td3{
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+    .memo{
+      table{
+        table-layout: auto;
+        width: 90%;
         margin: 0 auto;
         thead{
 
