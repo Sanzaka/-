@@ -28,6 +28,7 @@ class GroupMembersController < ApplicationController
   end
 
   def index
+    @group_members = GroupMember.where(group_id: params[:group_id])
   end
 
   private
