@@ -5,13 +5,19 @@ class GroupsController < ApplicationController
   end
 
   def show
+    # 共通するインスタンス変数
     @group = Group.find(params[:id])
     @group_members = GroupMember.all
-    @today_targets = Target.where(group_id: @group.id, created_at: Time.zone.now.all_day)
-    
     @entry = Entry.new
+
+    # workグループ
     @target = Target.new
     @result = Result.new
+    @today_targets = Target.where(group_id: @group.id, created_at: Time.zone.now.all_day)
+
+    # friendグループ
+    @message = GroupMessage.new
+    @messages = GroupMessage.where(group_id: @group.id)
   end
 
   def new

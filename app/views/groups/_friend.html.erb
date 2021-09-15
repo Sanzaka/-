@@ -1,0 +1,43 @@
+<div class="friend">
+  <h3>フレンドグループ</h3>
+  <div class="comment">
+    <%= form_with(model: [@group, @message], local: true) do |f| %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.hidden_field :group_id, :value => @group.id %>
+
+      <div class="area">
+        <%= f.text_area :message, placeholder: "投稿内容を記入してください", class: "text_area"%>
+      </div>
+
+      <div class="action">
+        <%= f.submit "掲示板に投稿", class: "big_btn" %>
+      </div>
+    <%end%>
+  </div>
+
+  <div class="messages">
+    <% @messages.each do |m| %>
+      <div class="content">
+
+        <div class="icon">
+          <%= attachment_image_tag m.user, :image, format: "jpeg", size: "70x70", class: "image"%>
+          <div class="name">
+            <%= m.user.name %>
+          </div>
+        </div>
+
+        <div class="text">
+          <%= m.message %>
+        </div>
+
+        <div class="reaction">
+          <% if m.user_id == current_user.id %>
+            <%= link_to group_group_message_path(@group, m), method: :delete, class: "edit_link" do %>
+              <div class="red_btn">削除</div>
+            <%end%>
+          <%end%>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>

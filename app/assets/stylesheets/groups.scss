@@ -10,13 +10,13 @@ $space: 30px;
 
 // showページ
 .group_show{
-* {text-align:center;}
+
   .info{
+    text-align: center;
     .type{
       margin-bottom: 30px;
     }
     .image{
-      border-radius: 30px;
       margin-bottom: $space;
     }
     .name{
@@ -31,112 +31,156 @@ $space: 30px;
       }
     }
   }
+
+
   .main{
-    .data{
-      .area{
-        .text_area{
-        border-radius: 5px;
-        height: 50px;
-        width: 200px;
-      }
-      .text_area:focus {
-        outline: none;
-        border: 2px solid #4F8C32;
-      }
-      }
-
-      .edit_link{
-        margin: 15px 15px;
-        div{
-          //application.scssに定義済み
+    // workグループ
+    .work{
+      text-align: center;
+      .data{
+        .area{
+          .text_area{
+          border-radius: 5px;
+          height: 50px;
+          width: 200px;
         }
-      }
-    }
-    .calendar{
-      width: 300px;
-      height: 200px;
-    }
-    .target{
-      table{
-        table-layout: auto;
-        width: 90%;
-        margin: 0 auto 30px;
-        thead{
-
-          tr{
-
-            .th1{
-              padding: 5px;
-              width: 20%
-            }
-            .th2{
-              padding: 5px;
-              width: 50%;
-            }
-            .th3{
-              padding: 5px;
-              width: 20%;
-            }
-          }
+        .text_area:focus {
+          outline: none;
+          border: 2px solid #4F8C32;
         }
-        tbody{
-          tr{
+        }
 
-            .td1{
-              text-align: center;
-            }
-            .td2{
-              text-align: center;
-            }
-            .td3{
-              text-align: center;
-            }
+        .edit_link{
+          margin: 15px 15px;
+          div{
+            //application.scssに定義済み
           }
         }
       }
-    }
-    .memo{
-      table{
-        table-layout: auto;
-        width: 90%;
-        margin: 0 auto;
-        thead{
+      .calendar{
+        width: 300px;
+        height: 200px;
+      }
+      .target{
+        table{
+          table-layout: auto;
+          width: 90%;
+          margin: 0 auto 30px;
+          thead{
 
-          tr{
+            tr{
 
-            .th1{
-              padding: 5px;
-              width: 20%
-            }
-            .th2{
-              padding: 5px;
-              width: 50%;
-            }
-            .th3{
-              padding: 5px;
-              width: 20%;
+              .th1{
+                padding: 5px;
+                width: 20%
+              }
+              .th2{
+                padding: 5px;
+                width: 50%;
+              }
+              .th3{
+                padding: 5px;
+                width: 20%;
+              }
             }
           }
-        }
-        tbody{
-          tr{
+          tbody{
+            tr{
 
-            .td1{
-              text-align: center;
-            }
-            .td2{
-              text-align: center;
-            }
-            .td3{
-              text-align: center;
+              .td1{
+                text-align: center;
+              }
+              .td2{
+                text-align: center;
+              }
+              .td3{
+                text-align: center;
+              }
             }
           }
         }
       }
+      .memo{
+        table{
+          table-layout: auto;
+          width: 90%;
+          margin: 0 auto;
+          thead{
+
+            tr{
+
+              .th1{
+                padding: 5px;
+                width: 20%
+              }
+              .th2{
+                padding: 5px;
+                width: 50%;
+              }
+              .th3{
+                padding: 5px;
+                width: 20%;
+              }
+            }
+          }
+          tbody{
+            tr{
+
+              .td1{
+                text-align: center;
+              }
+              .td2{
+                text-align: center;
+              }
+              .td3{
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+      .graph{
+        width: 300px;
+        height: 200px;
+      }
     }
-    .graph{
-      width: 300px;
-      height: 200px;
+
+    // friendグループ
+    .friend{
+      h3{
+        text-align: center;
+      }
+      .comment{
+        text-align: center;
+        .area{}
+        .action{
+          margin-bottom: $space;
+        }
+      }
+
+      .messages{
+        .content{
+          display: flex;
+          margin-bottom: 10px;
+          .icon{
+            text-align: center;
+            flex-grow: 1;
+            .name{}
+          }
+          .text{
+            justify-content: start;
+            flex-grow: 5;
+            background-color: #A0D3D9;
+            border-bottom: solid 7px #394D59;
+            border-radius: 10px;
+            padding: 10px;
+          }
+          .reaction{
+            text-align: center;
+            flex-grow: 1;
+          }
+        }
+      }
     }
   }
 }

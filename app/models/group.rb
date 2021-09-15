@@ -6,6 +6,7 @@ class Group < ApplicationRecord
   has_many :users, through: :group_members
   has_many :entry, dependent: :destroy
   has_many :targets, dependent: :destroy
+  has_many :group_messages, dependent: :destroy
 
 
 
