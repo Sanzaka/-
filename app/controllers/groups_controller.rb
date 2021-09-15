@@ -6,10 +6,12 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @entry = Entry.new
     @group_members = GroupMember.all
+    @today_targets = Target.where(group_id: @group.id, created_at: Time.zone.now.all_day)
+    
+    @entry = Entry.new
     @target = Target.new
-    @today_targets = Target.where(user_id: current_user.id)
+    @result = Result.new
   end
 
   def new

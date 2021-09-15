@@ -10,4 +10,6 @@ class User < ApplicationRecord
   has_many :entry, dependent: :destroy
   has_many :targets, dependent: :destroy
 
+
+
 end
