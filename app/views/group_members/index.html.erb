@@ -1,0 +1,18 @@
+<div class="entry_index">
+  <h3>グループメンバー一覧</h3>
+  <table class="borderless_table">
+    <thead>
+      <tr>
+        <th class="th1">ユーザー画像</th><th class="th2">名前</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @group_members.each do |member| %>
+        <tr>
+          <td class="td1"><%= attachment_image_tag member.user, :image, format: "jpeg", size: "100x100", class: "image"%></td>
+          <td class="td2"><%= member.user.name %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>
