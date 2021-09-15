@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :group_members, dependent: :destroy
   has_many :entry, dependent: :destroy
   has_many :targets, dependent: :destroy
+  has_many :group_messages, dependent: :destroy
 
 
 
