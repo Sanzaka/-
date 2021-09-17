@@ -27,6 +27,15 @@
       <%= f.radio_button :group_type, "friend_group" %>
     </div>
 
+    <div><strong>グループ加入の際</strong></div><br>
+    <div class="field">
+      <%= f.label :direct_join, "申請が必要", value: "false" %>
+      <%= f.radio_button :direct_join, "false", checked: true %><br>
+
+      <%= f.label :direct_join, "申請は不要", value: "true" %>
+      <%= f.radio_button :direct_join, "true" %>
+    </div>
+
     <div class="action">
       <%= f.submit "グループ作成", class: "big_btn" %>
     </div>

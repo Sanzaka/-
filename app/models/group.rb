@@ -7,7 +7,8 @@ class Group < ApplicationRecord
   has_many :entry, dependent: :destroy
   has_many :targets, dependent: :destroy
   has_many :group_messages, dependent: :destroy
-
-
-
+  
+  def user_exists?(user)
+    GroupMember.find_by(user_id: user.id).present?
+  end
 end

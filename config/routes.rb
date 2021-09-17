@@ -9,7 +9,11 @@ Rails.application.routes.draw do
 
   get "group/:id/data" => "groups#data", as: "group_data"
   resources :groups do
-    resources :group_members, only: [:create, :destroy, :index]
+    resources :group_members, only: [:create, :destroy, :index] do
+      member do
+        post :direct
+      end
+    end
     resources :entries, only: [:create, :index, :destroy]
     resources :targets, only: [:create, :edit, :update, :destroy]
     resources :group_messages, only: [:create, :destroy]

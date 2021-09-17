@@ -101,20 +101,36 @@
   </div>
 
   <div class="join">
-    <%= form_with(model:[@group, @entry], local: true) do |f| %>
-      <div class="action">
-        <%= f.hidden_field :user_id, :value => current_user.id %>
-        <%= f.hidden_field :group_id, :value => @group.id %>
-        <%= f.submit "加入", class: "big_btn" %>
+    <% unless @group.user_exists?(current_user) %>
+      <% if @group.direct_join == true %>
+        <div class="action">
+          <%= form_with(url: direct_group_group_member_path(@group.id), model:[@group, @direct_join], local: true) do |f| %>
+            <%= f.submit "加入", class: "big_btn" %>
+          <%end%>
+          <div>＊すぐに加入できます！</div>
+        </div>
+
+
+      <%else%>
+        <%= form_with(model:[@group, @entry], local: true) do |f| %>
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+          <%= f.hidden_field :group_id, :value => @group.id %>
+          <div class="action">
+            <%= f.submit "加入", class: "big_btn" %>
+            <div>＊加入申請を送信します！</div>
+          </div>
+        <%end%>
+
+      <%end%>
+
+    <%else%>
+      <div class="leave">
+        <%= link_to group_group_member_path(@group, current_user.id), method: :delete, data: {confirm: "このグループを退会します。本当によろしいですか？"}, class: "edit_link" do %>
+          <div class="red_btn">グループ退会</div>
+          <%= @group_members.count %>
+        <%end%>
       </div>
     <%end%>
-
-  <div class="leave">
-    <%= link_to group_group_member_path(@group, current_user.id), method: :delete, data: {confirm: "このグループを退会します。本当によろしいですか？"}, class: "edit_link" do %>
-      <div class="red_btn">グループ退会</div>
-    <%end%>
   </div>
 
-  <%= @group_members.count %>
-  </div>
 </div>

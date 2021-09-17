@@ -2,7 +2,7 @@
 <div class="container user_show">
   <div class="info">
     <h3>ユーザー情報</h3>
-    <%= attachment_image_tag @user, :image, format: "jpeg", size: "100x100", class: "image"%>
+    <%= attachment_image_tag @user, :image, format: "jpeg", size: "100x100", class: "image" %>
     <div class="name">
       NAME<br><%= @user.name %>
     </div>
@@ -16,9 +16,23 @@
   </div>
   <div class="main">
     <h3>メニュー</h3>
+    
     <div class="group">
       <h3>人気グループ</h3>
-      <!--グループランキング機能実装予定-->
+      <% @group_ranks.each do |group| %>
+        <div class="group_rank">
+          <div class="head">
+            <%= attachment_image_tag group, :image, format: "jpeg", size: "50x50", class: "image" %>
+          </div>
+          <div class="name">
+            <%= group.name %>
+          </div>
+          <div class="type">
+            <%= group.group_type %>
+          </div>
+        </div>
+      <%end%>
+
       <%= link_to groups_path, class: "edit_link" do %>
         <div class="green_btn">グループ一覧</div>
       <%end%>

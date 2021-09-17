@@ -9,6 +9,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @group_members = GroupMember.all
     @entry = Entry.new
+    @direct_join = GroupMember.new
 
     # workグループ
     @target = Target.new
@@ -58,7 +59,7 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, :intro, :image, :group_type)
+    params.require(:group).permit(:name, :intro, :image, :group_type, :direct_join)
   end
 
 end

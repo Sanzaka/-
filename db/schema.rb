@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_16_103018) do
+ActiveRecord::Schema.define(version: 2021_09_17_080832) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2021_09_16_103018) do
   create_table "group_members", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "group_id", null: false
-    t.integer "operation_right", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_09_16_103018) do
     t.integer "group_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "direct_join", default: false, null: false
   end
 
   create_table "results", force: :cascade do |t|

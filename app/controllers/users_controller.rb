@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(current_user.id)
+    @group_ranks = Group.find(GroupMember.group(:group_id).order("count(group_id) desc").limit(3).pluck(:group_id))
   end
 
   private
