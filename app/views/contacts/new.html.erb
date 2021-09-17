@@ -1,0 +1,16 @@
+<div class="contact">
+  <h3>お問合せフォーム</h3>
+  <%= form_with model: @contact, local:true do |f| %>
+    <%= f.hidden_field :name, :value => @user.name %>
+    <%= f.hidden_field :email, :value => @user.email %>
+
+    <div class="field">
+      <%= f.label :message, "お問合せ内容" %>
+      <%= f.text_area :message, autofocus: true, class: "text_area"%>
+    </div>
+
+    <div class="action">
+      <%= f.submit "送信", class: "big_btn" %>
+    </div>
+  <%end%>
+</div>

@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   resources :targets, only: [:create, :edit, :update, :destroy] do
     resources :results, only: [:create, :edit, :update, :destroy]
   end
+
+  resources :contacts, only: [:new, :create]
 end
