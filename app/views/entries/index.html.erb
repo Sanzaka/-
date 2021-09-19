@@ -14,6 +14,7 @@
           <td class="td3">
             <%= form_with(model:[@group, @group_member], local:true) do |f| %>
               <div class="action">
+                <%= hidden_field_tag :user_id, entry.user_id %>
                 <%= f.submit "許可", class: "big_btn" %>
               </div>
             <%end%>

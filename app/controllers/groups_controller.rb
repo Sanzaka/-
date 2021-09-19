@@ -7,7 +7,7 @@ class GroupsController < ApplicationController
   def show
     # 共通するインスタンス変数
     @group = Group.find(params[:id])
-    @group_members = GroupMember.all
+    @my_group_status = GroupMember.find_by(group_id: @group, user_id: current_user.id)
     @entry = Entry.new
     @direct_join = GroupMember.new
 
@@ -23,11 +23,18 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    @group_member = GroupMember.new
   end
 
   def create
     @group = Group.new(group_params)
     if @group.save
+      # グループ作成者をグループメンバーに含める処理
+      @direct_join = GroupMember.new(group_member_params)
+      @direct_join.user_id = current_user.id
+      @direct_join.group_id = @group.id
+      @direct_join.operation_right = 1
+      @direct_join.save!
       flash[:notice] = "グループを作成しました！"
       redirect_to group_path(@group.id)
     else
@@ -60,6 +67,10 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:name, :intro, :image, :group_type, :direct_join)
+  end
+
+  def group_member_params
+    params.permit(:user_id, :group_id, :operation_right)
   end
 
 end

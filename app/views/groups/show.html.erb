@@ -1,5 +1,5 @@
-<div>通知機能表示欄</div>
 <div class="container group_show">
+  <
   <div class="info">
 
     <h3>グループ情報</h3>
@@ -22,12 +22,14 @@
       <div class="green_btn">メンバー一覧</div>
     <%end%>
 
-    <%= link_to group_entries_path(@group.id), class: "edit_link" do %>
-      <div class="green_btn">加入申請一覧</div>
-    <%end%>
+    <% if @group.user_exists?(current_user, @group) && @my_group_status.operation_right == 1 %>
+      <%= link_to group_entries_path(@group.id), class: "edit_link" do %>
+        <div class="green_btn">加入申請一覧</div>
+      <%end%>
 
-    <%= link_to edit_group_path, class: "edit_link" do %>
-      <div class="green_btn">情報変更</div>
+      <%= link_to edit_group_path, class: "edit_link" do %>
+        <div class="green_btn">情報変更</div>
+      <%end%>
     <%end%>
 
 
