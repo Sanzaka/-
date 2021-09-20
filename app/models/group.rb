@@ -11,4 +11,9 @@ class Group < ApplicationRecord
   def user_exists?(user, group)
     GroupMember.find_by(user_id: user.id, group_id: group.id).present?
   end
+
+  # 検索機能、名前が一致している部分があるgroupを返す
+  def self.looks(word)
+    @user = Group.where("name LIKE?","%#{word}%")
+  end
 end

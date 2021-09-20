@@ -21,11 +21,32 @@ $space: 30px;
     }
     .edit_link{
       div{
-        
+
       }
     }
   }
   .main{
+    .group{
+      .container{
+        display: flex;
+        justify-content: space-around;
+        .group_rank{
+          background-color: #DDDDDD;
+          border: double 6px white;
+          border-radius: 10px;
+          width: 150px;
+          height: 200px;
+          .head{
 
+          }
+          .name{
+
+          }
+          .type{
+
+          }
+        }
+      }
+    }
   }
 }

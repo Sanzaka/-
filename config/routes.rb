@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "tutorial" => "homes#tutorial", as: "tutorial"
 
   resources :users, only:[:show, :edit, :update]
+  get "search" => "searches#search", as: "search"
 
   get "group/:id/data" => "groups#data", as: "group_data"
   resources :groups do

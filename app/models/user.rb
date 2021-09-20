@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :targets, dependent: :destroy
   has_many :group_messages, dependent: :destroy
 
-
-
+  # 検索機能、名前が一致している部分があるuserを返す
+  def self.looks(word)
+    @user = User.where("name LIKE?","%#{word}%")
+  end
 end

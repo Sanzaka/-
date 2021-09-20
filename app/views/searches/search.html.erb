@@ -1,0 +1,35 @@
+<div class="group_index">
+  <h3>グループ一覧</h3>
+  <table class="borderless_table">
+    <% if @range == "User" %>
+      <thead>
+        <tr>
+          <th class="th1">ユーザー画像</th><th class="th2">名前</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td class="td1"><%= attachment_image_tag user, :image, format: "jpeg", size: "100x100", class: "image"%></td>
+            <td class="td2"><%= user.name %></td>
+          </tr>
+        <%end%>
+      </tbody>
+    <%else%>
+      <thead>
+        <tr>
+          <th class="th1">グループ画像</th><th class="th2">名前</th><th class="th3">メンバー数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @groups.each do |group| %>
+          <tr>
+            <td class="td1"><%= attachment_image_tag group, :image, format: "jpeg", size: "100x100", class: "image"%></td>
+            <td class="td2"><%= link_to group.name, group_path(group.id) %></td>
+            <td class="td3"><%= group.group_members.count %></td>
+          </tr>
+        <%end%>
+      </tbody>
+    <%end%>
+  </table>
+</div>
