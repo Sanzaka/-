@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
 
   def edit
     @user = User.find(current_user.id)
@@ -10,8 +11,8 @@ class UsersController < ApplicationController
       flash[:notice] = "変更を保存しました！"
       redirect_to user_path(@user.id)
     else
-      flash.now[:alert] = "必要な情報を入力してください！"
-      render edit
+      flash.now[:alert] = "変更に失敗しました！"
+      render "edit"
     end
   end
 

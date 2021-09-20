@@ -1,10 +1,15 @@
 class ResultsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     result = Result.new(result_params)
-    result.save
-    flash[:notice] = "取組結果を保存しました！"
-    redirect_to group_path(result.target.group_id)
+    if result.save
+      flash[:notice] = "取組結果を保存しました！"
+      redirect_to group_path(result.target.group_id)
+    else
+      flash[:alert] = "情報を入力してください！"
+      redirect_to group_path(result.target.group_id)
+    end
   end
 
   def edit

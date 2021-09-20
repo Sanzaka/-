@@ -1,4 +1,5 @@
 class GroupMessagesController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     group_message = GroupMessage.new(group_message_params)

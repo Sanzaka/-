@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @groups = Group.all
@@ -49,8 +50,12 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-    @group.update(group_params)
-    redirect_to group_path(@group.id)
+    if @group.update(group_params)
+      redirect_to group_path(@group.id)
+    else
+      flash.now[:alert] = "情報の変更に失敗しました！"
+      render "edit"
+    end
   end
 
   def destroy
@@ -60,8 +65,6 @@ class GroupsController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
-  def data
-  end
 
   private
 

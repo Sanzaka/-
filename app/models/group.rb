@@ -1,6 +1,9 @@
 class Group < ApplicationRecord
   attachment :image
   enum group_type: {"work_group": 0, "friend_group": 1}
+  validates :name, presence: true
+  validates :group_type, presence: true
+
 
   has_many :group_members, dependent: :destroy
   has_many :users, through: :group_members

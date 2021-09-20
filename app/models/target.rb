@@ -1,4 +1,9 @@
 class Target < ApplicationRecord
+
+  validates :user_id, presence: true
+  validates :group_id, presence: true
+  validates :target_content, presence: { message: ""}, length: {maximum: 100}
+
   belongs_to :user
   belongs_to :group
   has_one :result

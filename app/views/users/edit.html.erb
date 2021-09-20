@@ -3,33 +3,35 @@
 
   <%= form_with model: @user, local: true do |f| %>
 
-  <div class="field">
-    <%= f.label :name, "ユーザー名" %>
-    <%= f.text_field :name, autofocus: true %>
-  </div>
+    <%= render 'layouts/error_messages', object: f.object %>
 
-  <div class="field">
-    <%= f.label :intro, "自己紹介" %>
-    <%= f.text_area :intro, class: "text_area" %>
-  </div>
+    <div class="field">
+      <%= f.label :name, "ユーザー名" %>
+      <%= f.text_field :name, autofocus: true %>
+    </div>
 
-  <div class="field">
-    <%= f.label :image, "ユーザー画像（任意）" %>
-    <%= f.attachment_field :image %>
-  </div>
+    <div class="field">
+      <%= f.label :intro, "自己紹介" %>
+      <%= f.text_area :intro, class: "text_area" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :is_email_receive, "メールを受け取る", value: true %>
-    <%= f.radio_button :is_email_receive, :true, checked: true %><br>
+    <div class="field">
+      <%= f.label :image, "ユーザー画像（任意）" %>
+      <%= f.attachment_field :image %>
+    </div>
 
-    <%= f.label :is_email_receive, "メールを受け取らない", value: false %>
-    <%= f.radio_button :is_email_receive, :false %>
-  </div>
+    <div class="field">
+      <%= f.label :is_email_receive, "メールを受け取る", value: true %>
+      <%= f.radio_button :is_email_receive, :true, checked: true %><br>
 
-  <div class="action">
-    <%= f.submit "ユーザー変更", class: "big_btn" %>
-  </div>
+      <%= f.label :is_email_receive, "メールを受け取らない", value: false %>
+      <%= f.radio_button :is_email_receive, :false %>
+    </div>
 
-<%end%>
+    <div class="action">
+      <%= f.submit "ユーザー変更", class: "big_btn" %>
+    </div>
+
+  <%end%>
 
 </div>

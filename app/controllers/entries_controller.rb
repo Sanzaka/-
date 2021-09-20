@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     # 送信者のid、ページのグループidを取得し、加入申請として保存

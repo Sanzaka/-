@@ -6,6 +6,11 @@ class User < ApplicationRecord
 
   attachment :image
 
+  validates :email, presence: true
+  validates :name, presence: true, length: { maximum: 10 }
+  validates :intro, length: { maximum: 50 }
+
+
   has_many :group_members, dependent: :destroy
   has_many :entry, dependent: :destroy
   has_many :targets, dependent: :destroy

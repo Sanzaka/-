@@ -1,10 +1,15 @@
 class TargetsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     target = Target.new(target_params)
-    target.save!
-    flash[:notice] = "今日の目標を登録しました！"
-    redirect_to request.referer
+    if target.save
+      flash[:notice] = "今日の目標を登録しました！"
+      redirect_to request.referer
+    else
+      flash[:alert] = "情報を入力してください！"
+      redirect_to request.referer
+    end
   end
 
   def edit
@@ -13,10 +18,14 @@ class TargetsController < ApplicationController
   end
 
   def update
-    target = Target.find(params[:id])
-    target.update(target_params)
-    flash[:notice] = "目標を変更しました！"
-    redirect_to group_path(params[:group_id])
+    @target = Target.find(params[:id])
+    if @target.update(target_params)
+      flash[:notice] = "目標を変更しました！"
+      redirect_to group_path(params[:group_id])
+    else
+      flash.now[:alert] = "目標を入力してください！"
+      render "edit"
+    end
   end
 
   def destroy

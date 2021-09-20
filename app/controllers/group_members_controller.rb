@@ -1,4 +1,5 @@
 class GroupMembersController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     # 加入申請が承諾された場合の処理
