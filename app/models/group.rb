@@ -12,7 +12,7 @@ class Group < ApplicationRecord
   has_many :group_messages, dependent: :destroy
 
   def user_exists?(user, group)
-    GroupMember.find_by(user_id: user.id, group_id: group.id).present?
+    group_members.where(user_id: user.id, group_id: group.id).present?
   end
 
   # 検索機能、名前が一致している部分があるgroupを返す
