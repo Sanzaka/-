@@ -6,7 +6,7 @@ class Target < ApplicationRecord
 
   belongs_to :user
   belongs_to :group
-  has_one :result
+  has_one :result, dependent: :destroy
 
   # def today_my_target_exists?(target)
   #   Target.find_by(user_id: current_user.id).present?

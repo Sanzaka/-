@@ -97,7 +97,7 @@
 
   <div class="graph">
     <h3>一週間達成度比較</h3>
-    グラフ未設定
+    <%= column_chart Result.pluck(:created_at, :achievement), class: "graph_siz" %>
   </div>
 
   <div class="join">
@@ -126,7 +126,7 @@
     <%end%>
 
     <!--グループに自分が居て、かつ編集ステータスがない人-->
-    <% if @group.user_exists?(current_user, @group) && @my_group_status == 0 %>
+    <% if @group.user_exists?(current_user, @group) && @my_group_status.operation_right == 0 %>
       <div class="leave">
         <%= link_to group_group_member_path(@group, current_user.id), method: :delete, data: {confirm: "このグループを退会します。本当によろしいですか？"}, class: "edit_link" do %>
           <div class="red_btn">グループ退会</div>
