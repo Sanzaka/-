@@ -39,6 +39,6 @@ class ResultsController < ApplicationController
   private
 
   def result_params
-    params.require(:result).permit(:target_id, :achievement, :result_memo)
+    params.require(:result).permit(:target_id, :achievement, :result_memo, :user_id, :group_id)
   end
 end

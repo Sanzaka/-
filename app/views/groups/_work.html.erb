@@ -51,6 +51,8 @@
                 <% if target.user_id == current_user.id %>
                   <%= form_with(model: [target, @result], local: true) do |f| %>
                     <%= f.hidden_field :target_id, :value => target.id %>
+                    <%= f.hidden_field :user_id, :value => current_user.id %>
+                    <%= f.hidden_field :group_id, :value => @group.id %>
                     <div class="area">
                       <%= f.text_field :achievement, placeholder: "0~100" %>
                     </div>
@@ -97,7 +99,7 @@
 
   <div class="graph">
     <h3>一週間達成度比較</h3>
-    <%= column_chart Result.pluck(:created_at, :achievement), class: "graph_siz" %>
+    <%= column_chart @results.pluck(:created_at, :achievement), class: "graph_size" %>
   </div>
 
   <div class="join">

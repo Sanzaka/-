@@ -17,6 +17,10 @@ class GroupsController < ApplicationController
     @result = Result.new
     @today_targets = Target.where(group_id: @group.id, created_at: Time.zone.now.all_day)
 
+    # グラフ部分
+    @results = Result.where(user_id: current_user.id, group_id: @group.id).last(7)
+
+
     # friendグループ
     @message = GroupMessage.new
     @messages = GroupMessage.where(group_id: @group.id)
