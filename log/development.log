@@ -38019,3 +38019,1975 @@ Migrating to AddOperationRightToGroupMember (20210918024250)
   ↳ db/seeds.rb:34
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
   ↳ db/seeds.rb:34
+Started GET "/groups/6" for 117.108.67.184 at 2021-09-21 07:51:40 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 16ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/users/sign_in" for 117.108.67.184 at 2021-09-21 07:51:40 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 275ms (Views: 263.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 117.108.67.184 at 2021-09-21 07:51:43 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (115.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 204ms (Views: 203.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 117.108.67.184 at 2021-09-21 07:51:58 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oa6Bd3Ih5QRPDVN1yilkbXe/YZvfVP8A4UsQHjTGT6PYwKAmyi0t79QjmbM7o6ldNSBm3cR+87ea98uzjKNAkA==", "user"=>{"name"=>"asdf", "email"=>"a@a", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "image"=>"{}", "is_email_receive"=>"true"}, "commit"=>"ユーザー登録"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@a"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "is_email_receive", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "a@a"], ["encrypted_password", "$2a$12$rf3hWMw.xMEfaru9ELzc9.XD4SJJPf7Ie5qBapv2eOjmOP7zXsfCO"], ["name", "asdf"], ["is_email_receive", 1], ["image_id", nil], ["created_at", "2021-09-21 07:51:59.102065"], ["updated_at", "2021-09-21 07:51:59.102065"]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Redirected to https://4f572cf0a4f34750920dbb3b505cca72.vfs.cloud9.ap-northeast-1.amazonaws.com/users/1
+Completed 302 Found in 303ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/users/1" for 117.108.67.184 at 2021-09-21 07:51:59 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(group_id) desc". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from show at /home/ec2-user/environment/work_friend/app/controllers/users_controller.rb:21)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT  "group_members"."group_id" FROM "group_members" GROUP BY "group_members"."group_id" ORDER BY count(group_id) desc LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/controllers/users_controller.rb:21
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 142ms (Views: 125.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/groups" for 117.108.67.184 at 2021-09-21 07:52:00 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:10
+  Rendered groups/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 117.108.67.184 at 2021-09-21 07:52:02 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:4
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1" for 117.108.67.184 at 2021-09-21 07:52:03 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(group_id) desc". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from show at /home/ec2-user/environment/work_friend/app/controllers/users_controller.rb:21)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT  "group_members"."group_id" FROM "group_members" GROUP BY "group_members"."group_id" ORDER BY count(group_id) desc LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/controllers/users_controller.rb:21
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 36.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/groups/new" for 117.108.67.184 at 2021-09-21 07:52:03 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 44ms (Views: 31.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/groups" for 117.108.67.184 at 2021-09-21 07:52:05 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jXg48kTBUg4fim+qBU/XY6aXqCgwkNtfvxFql67Bwm5bHuDqz/l5+qT6HPt5ZaDW2QfbD2D5xOcCRo8ruXpXsQ==", "group"=>{"name"=>"asdf", "intro"=>"", "image"=>"{}", "group_type"=>"work_group", "direct_join"=>"false"}, "commit"=>"グループ作成"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/groups_controller.rb:32
+  [1m[36mGroup Create (0.4ms)[0m  [1m[32mINSERT INTO "groups" ("name", "intro", "image_id", "group_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asdf"], ["intro", ""], ["image_id", nil], ["group_type", 0], ["created_at", "2021-09-21 07:52:05.739222"], ["updated_at", "2021-09-21 07:52:05.739222"]]
+  ↳ app/controllers/groups_controller.rb:32
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/groups_controller.rb:32
+Unpermitted parameters: :utf8, :authenticity_token, :group, :commit
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/groups_controller.rb:38
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:38
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:38
+  [1m[36mGroupMember Create (0.3ms)[0m  [1m[32mINSERT INTO "group_members" ("user_id", "group_id", "created_at", "updated_at", "operation_right") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["group_id", 1], ["created_at", "2021-09-21 07:52:05.759436"], ["updated_at", "2021-09-21 07:52:05.759436"], ["operation_right", 1]]
+  ↳ app/controllers/groups_controller.rb:38
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/groups_controller.rb:38
+Redirected to https://4f572cf0a4f34750920dbb3b505cca72.vfs.cloud9.ap-northeast-1.amazonaws.com/groups/1
+Completed 302 Found in 31ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 07:52:05 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.2ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "results"."created_at", "results"."achievement" FROM "results"[0m
+  ↳ app/views/groups/_work.html.erb:100
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (7.5ms)
+  Rendered groups/show.html.erb within layouts/application (15.7ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 82ms (Views: 43.1ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/groups/1/targets" for 117.108.67.184 at 2021-09-21 07:52:12 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TargetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XS2U1CjTXRSWa9TgLtqvrqjq2EpjL8Nc+6FCs4UgUiVutR6hmv79qdoBxPq8kJheKbWhAL1z0Vc+ZS88EMDIlQ==", "target"=>{"user_id"=>"1", "group_id"=>"1", "target_content"=>"asfd"}, "commit"=>"今日の目標登録", "group_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/targets_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/targets_controller.rb:6
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/targets_controller.rb:6
+  [1m[36mTarget Create (0.5ms)[0m  [1m[32mINSERT INTO "targets" ("user_id", "group_id", "target_content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["group_id", 1], ["target_content", "asfd"], ["created_at", "2021-09-21 07:52:12.950467"], ["updated_at", "2021-09-21 07:52:12.950467"]]
+  ↳ app/controllers/targets_controller.rb:6
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/targets_controller.rb:6
+Redirected to https://4f572cf0a4f34750920dbb3b505cca72.vfs.cloud9.ap-northeast-1.amazonaws.com/groups/1
+Completed 302 Found in 18ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 07:52:12 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "results"."created_at", "results"."achievement" FROM "results"[0m
+  ↳ app/views/groups/_work.html.erb:100
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (12.5ms)
+  Rendered groups/show.html.erb within layouts/application (16.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 51ms (Views: 44.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/targets/1/results" for 117.108.67.184 at 2021-09-21 07:52:16 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ResultsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RyNZQ6nq3lXV5BGpAEUHrlm6YEismQTpgLHbmxIdCEx0u9M2G8d+6JmOAbOSDzBe2OUZAnLFFuJFdbYUh/2S/A==", "result"=>{"target_id"=>"1", "achievement"=>"100"}, "commit"=>"登録", "target_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/results_controller.rb:6
+  [1m[36mTarget Load (0.2ms)[0m  [1m[34mSELECT  "targets".* FROM "targets" WHERE "targets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/results_controller.rb:6
+  [1m[36mResult Create (0.4ms)[0m  [1m[32mINSERT INTO "results" ("target_id", "achievement", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["target_id", 1], ["achievement", 100], ["created_at", "2021-09-21 07:52:16.704404"], ["updated_at", "2021-09-21 07:52:16.704404"]]
+  ↳ app/controllers/results_controller.rb:6
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/results_controller.rb:6
+Redirected to https://4f572cf0a4f34750920dbb3b505cca72.vfs.cloud9.ap-northeast-1.amazonaws.com/groups/1
+Completed 302 Found in 16ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 07:52:16 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "results"."created_at", "results"."achievement" FROM "results"[0m
+  ↳ app/views/groups/_work.html.erb:100
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (13.4ms)
+  Rendered groups/show.html.erb within layouts/application (16.9ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 52ms (Views: 46.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 07:57:11 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.2ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT "results".* FROM "results"[0m
+  ↳ app/views/groups/_work.html.erb:100
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (17.9ms)
+  Rendered groups/show.html.erb within layouts/application (26.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 120ms (Views: 59.2ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 07:58:47 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "results"."created_at", "results"."achievement" FROM "results"[0m
+  ↳ app/views/groups/_work.html.erb:100
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (13.0ms)
+  Rendered groups/show.html.erb within layouts/application (26.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 60ms (Views: 53.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 08:00:32 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.2ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT  "results"."created_at", "results"."achievement" FROM "results" WHERE "results"."group_id" = ? LIMIT ?[0m  [["group_id", 1], ["LIMIT", 7]]
+  ↳ app/views/groups/_work.html.erb:100
+  Rendered groups/_work.html.erb (13.0ms)
+  Rendered groups/show.html.erb within layouts/application (17.9ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 5.6ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: results.group_id: SELECT  "results"."created_at", "results"."achievement" FROM "results" WHERE "results"."group_id" = ? LIMIT ?):
+     97: 
+     98:   <div class="graph">
+     99:     <h3>一週間達成度比較</h3>
+    100:     <%= column_chart @results.pluck(:created_at, :achievement), class: "graph_size" %>
+    101:   </div>
+    102: 
+    103:   <div class="join">
+  
+app/views/groups/_work.html.erb:100:in `_app_views_groups__work_html_erb__2207882973132236092_70337454590280'
+app/views/groups/show.html.erb:40:in `_app_views_groups_show_html_erb___1989877386856786138_70337452528380'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 08:00:46 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "results"."created_at", "results"."achievement" FROM "results" WHERE "results"."group_id" = ?[0m  [["group_id", 1]]
+  ↳ app/views/groups/_work.html.erb:100
+  Rendered groups/_work.html.erb (12.9ms)
+  Rendered groups/show.html.erb within layouts/application (17.6ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 4.6ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: results.group_id: SELECT "results"."created_at", "results"."achievement" FROM "results" WHERE "results"."group_id" = ?):
+     97: 
+     98:   <div class="graph">
+     99:     <h3>一週間達成度比較</h3>
+    100:     <%= column_chart @results.pluck(:created_at, :achievement), class: "graph_size" %>
+    101:   </div>
+    102: 
+    103:   <div class="join">
+  
+app/views/groups/_work.html.erb:100:in `_app_views_groups__work_html_erb__2207882973132236092_70337540422260'
+app/views/groups/show.html.erb:40:in `_app_views_groups_show_html_erb___1989877386856786138_70337540239860'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 08:00:58 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.2ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.2ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "results"."created_at", "results"."achievement" FROM "results"[0m
+  ↳ app/views/groups/_work.html.erb:100
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (15.3ms)
+  Rendered groups/show.html.erb within layouts/application (20.7ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 118ms (Views: 51.7ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 08:35:08 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.2ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.2ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered groups/_work.html.erb (17.3ms)
+  Rendered groups/show.html.erb within layouts/application (22.4ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `chart_date' for #<Result::ActiveRecord_Relation:0x00007ff16463e810>
+Did you mean?  chart_json):
+     97: 
+     98:   <div class="graph">
+     99:     <h3>一週間達成度比較</h3>
+    100:     <%= column_chart @results.chart_date, class: "graph_size" %>
+    101:   </div>
+    102: 
+    103:   <div class="join">
+  
+app/views/groups/_work.html.erb:100:in `_app_views_groups__work_html_erb__2207882973132236092_70337376271600'
+app/views/groups/show.html.erb:40:in `_app_views_groups_show_html_erb___1989877386856786138_70337381913060'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 08:35:52 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.2ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.2ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.2ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "results"."created_at", "results"."achievement" FROM "results" ORDER BY "results"."created_at" ASC[0m
+  ↳ app/models/result.rb:9
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (17.0ms)
+  Rendered groups/show.html.erb within layouts/application (22.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 145ms (Views: 81.7ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/groups/1/group_members" for 117.108.67.184 at 2021-09-21 08:35:53 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupMembersController#index as HTML
+  Parameters: {"group_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering group_members/index.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.2ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ?[0m  [["group_id", 1]]
+  ↳ app/views/group_members/index.html.erb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/group_members/index.html.erb:12
+  Rendered group_members/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 38ms (Views: 33.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 08:36:57 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "results"."created_at", "results"."achievement" FROM "results" WHERE "results"."group_id" = ? ORDER BY "results"."created_at" ASC[0m  [["group_id", 1]]
+  ↳ app/models/result.rb:9
+  Rendered groups/_work.html.erb (13.0ms)
+  Rendered groups/show.html.erb within layouts/application (18.0ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 4.6ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: results.group_id: SELECT "results"."created_at", "results"."achievement" FROM "results" WHERE "results"."group_id" = ? ORDER BY "results"."created_at" ASC):
+     97: 
+     98:   <div class="graph">
+     99:     <h3>一週間達成度比較</h3>
+    100:     <%= column_chart @results.chart_date, class: "graph_size" %>
+    101:   </div>
+    102: 
+    103:   <div class="join">
+  
+app/models/result.rb:9:in `chart_date'
+app/views/groups/_work.html.erb:100:in `_app_views_groups__work_html_erb__2207882973132236092_70337452686280'
+app/views/groups/show.html.erb:40:in `_app_views_groups_show_html_erb___1989877386856786138_70337454525880'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 08:37:53 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[36mResult Load (0.4ms)[0m  [1m[34mSELECT "results".* FROM "results" WHERE "results"."group_id" = ?[0m  [["group_id", 1]]
+  ↳ app/controllers/groups_controller.rb:19
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 3.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: results.group_id: SELECT "results".* FROM "results" WHERE "results"."group_id" = ?):
+  
+app/controllers/groups_controller.rb:19:in `to_h'
+app/controllers/groups_controller.rb:19:in `show'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 08:39:38 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[36mResult Load (0.4ms)[0m  [1m[34mSELECT "results".* FROM "results" WHERE "results"."group_id" = ?[0m  [["group_id", 1]]
+  ↳ app/controllers/groups_controller.rb:19
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 3.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: results.group_id: SELECT "results".* FROM "results" WHERE "results"."group_id" = ?):
+  
+app/controllers/groups_controller.rb:19:in `to_h'
+app/controllers/groups_controller.rb:19:in `show'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 10:54:49 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 3.2ms)
+
+
+  
+NoMethodError (undefined method `each' for nil:NilClass):
+  
+app/controllers/groups_controller.rb:22:in `show'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 10:55:52 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.2ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.2ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "results"."created_at", "results"."achievement" FROM "results" WHERE "results"."group_id" = ? ORDER BY "results"."created_at" ASC[0m  [["group_id", 1]]
+  ↳ app/models/result.rb:9
+  Rendered groups/_work.html.erb (15.0ms)
+  Rendered groups/show.html.erb within layouts/application (21.9ms)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 5.5ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: results.group_id: SELECT "results"."created_at", "results"."achievement" FROM "results" WHERE "results"."group_id" = ? ORDER BY "results"."created_at" ASC):
+     97: 
+     98:   <div class="graph">
+     99:     <h3>一週間達成度比較</h3>
+    100:     <%= column_chart @results.chart_date, class: "graph_size" %>
+    101:   </div>
+    102: 
+    103:   <div class="join">
+  
+app/models/result.rb:9:in `chart_date'
+app/views/groups/_work.html.erb:100:in `_app_views_groups__work_html_erb__2207882973132236092_70337341235800'
+app/views/groups/show.html.erb:40:in `_app_views_groups_show_html_erb___1989877386856786138_70337340944480'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 10:56:16 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.2ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "results"."created_at", "results"."achievement" FROM "results" WHERE "results"."group_id" = ? ORDER BY "results"."created_at" ASC[0m  [["group_id", 1]]
+  ↳ app/models/result.rb:9
+  Rendered groups/_work.html.erb (16.0ms)
+  Rendered groups/show.html.erb within layouts/application (20.8ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 5.4ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: results.group_id: SELECT "results"."created_at", "results"."achievement" FROM "results" WHERE "results"."group_id" = ? ORDER BY "results"."created_at" ASC):
+     97: 
+     98:   <div class="graph">
+     99:     <h3>一週間達成度比較</h3>
+    100:     <%= column_chart @results.chart_date, class: "graph_size" %>
+    101:   </div>
+    102: 
+    103:   <div class="join">
+  
+app/models/result.rb:9:in `chart_date'
+app/views/groups/_work.html.erb:100:in `_app_views_groups__work_html_erb__2207882973132236092_70337473207300'
+app/views/groups/show.html.erb:40:in `_app_views_groups_show_html_erb___1989877386856786138_70337473021600'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 10:56:37 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.2ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.2ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "results"."created_at", "results"."achievement" FROM "results" WHERE "results"."group_id" = ?[0m  [["group_id", 1]]
+  ↳ app/models/result.rb:9
+  Rendered groups/_work.html.erb (14.3ms)
+  Rendered groups/show.html.erb within layouts/application (19.4ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 5.2ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: results.group_id: SELECT "results"."created_at", "results"."achievement" FROM "results" WHERE "results"."group_id" = ?):
+     97: 
+     98:   <div class="graph">
+     99:     <h3>一週間達成度比較</h3>
+    100:     <%= column_chart @results.chart_date, class: "graph_size" %>
+    101:   </div>
+    102: 
+    103:   <div class="join">
+  
+app/models/result.rb:9:in `chart_date'
+app/views/groups/_work.html.erb:100:in `_app_views_groups__work_html_erb__2207882973132236092_70337391299780'
+app/views/groups/show.html.erb:40:in `_app_views_groups_show_html_erb___1989877386856786138_70337391109740'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 10:58:01 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "results" WHERE "results"."group_id" = ?[0m  [["group_id", 1]]
+  ↳ app/controllers/groups_controller.rb:19
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 4.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: results.group_id: SELECT COUNT(*) FROM "results" WHERE "results"."group_id" = ?):
+  
+app/controllers/groups_controller.rb:19:in `show'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 11:00:17 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) AS count_all, date(created_at) AS date_created_at FROM "results" WHERE "results"."group_id" = ? GROUP BY date(created_at)[0m  [["group_id", 1]]
+  ↳ app/controllers/groups_controller.rb:19
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 3.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: results.group_id: SELECT COUNT(*) AS count_all, date(created_at) AS date_created_at FROM "results" WHERE "results"."group_id" = ? GROUP BY date(created_at)):
+  
+app/controllers/groups_controller.rb:19:in `show'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 11:22:26 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[36mResult Load (0.4ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."group_id" = ? AND "results"."user_id" = ? ORDER BY "results"."id" DESC LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 7]]
+  ↳ app/controllers/groups_controller.rb:21
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 3.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: results.group_id: SELECT  "results".* FROM "results" WHERE "results"."group_id" = ? AND "results"."user_id" = ? ORDER BY "results"."id" DESC LIMIT ?):
+  
+app/controllers/groups_controller.rb:21:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddUserIdToResults (20210921112659)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "results" ADD "user_id" integer NOT NULL[0m
+  ↳ db/migrate/20210921112659_add_user_id_to_results.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddUserIdToResults (20210921112659)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddUserIdToResults (20210921112659)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (3.6ms)[0m  [1m[35mALTER TABLE "results" ADD "user_id" integer[0m
+  ↳ db/migrate/20210921112659_add_user_id_to_results.rb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210921112659_add_user_id_to_results.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aresults" ("id" integer NOT NULL PRIMARY KEY, "target_id" integer NOT NULL, "achievement" integer NOT NULL, "result_memo" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20210921112659_add_user_id_to_results.rb:4
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aresults" ("id","target_id","achievement","result_memo","created_at","updated_at","user_id")
+                     SELECT "id","target_id","achievement","result_memo","created_at","updated_at","user_id" FROM "results"[0m
+  ↳ db/migrate/20210921112659_add_user_id_to_results.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "results"[0m
+  ↳ db/migrate/20210921112659_add_user_id_to_results.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer NOT NULL PRIMARY KEY, "target_id" integer NOT NULL, "achievement" integer NOT NULL, "result_memo" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer NOT NULL)[0m
+  ↳ db/migrate/20210921112659_add_user_id_to_results.rb:4
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "results" ("id","target_id","achievement","result_memo","created_at","updated_at","user_id")
+                     SELECT "id","target_id","achievement","result_memo","created_at","updated_at","user_id" FROM "aresults"[0m
+  ↳ db/migrate/20210921112659_add_user_id_to_results.rb:4
+  [1m[35m (4.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddUserIdToResults (20210921112659)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "results" ADD "user_id" integer[0m
+  ↳ db/migrate/20210921112659_add_user_id_to_results.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210921112659"]]
+  ↳ bin/rails:9
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddGroupIdToResults (20210921112722)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "results" ADD "group_id" integer[0m
+  ↳ db/migrate/20210921112722_add_group_id_to_results.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210921112722"]]
+  ↳ bin/rails:9
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20210904090642)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "name" varchar NOT NULL, "intro" varchar, "is_email_receive" boolean NOT NULL, "is_deleted" boolean DEFAULT 0 NOT NULL, "image_id" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210904090642_devise_create_users.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20210904090642_devise_create_users.rb:43
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20210904090642_devise_create_users.rb:44
+  [1m[36mActiveRecord::SchemaMigration Create (5.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210904090642"]]
+  ↳ bin/rails:9
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateGroups (20210907013354)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "groups" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "intro" varchar NOT NULL, "image_id" varchar, "group_type" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210907013354_create_groups.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210907013354"]]
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateGroupMembers (20210908022847)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "group_members" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "group_id" integer NOT NULL, "operation_right" integer DEFAULT 0 NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210908022847_create_group_members.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210908022847"]]
+  ↳ bin/rails:9
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateEntries (20210910075952)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "entries" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "group_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210910075952_create_entries.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210910075952"]]
+  ↳ bin/rails:9
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateTargets (20210913004722)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "targets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "group_id" integer NOT NULL, "target_content" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210913004722_create_targets.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210913004722"]]
+  ↳ bin/rails:9
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateResults (20210913073132)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "results" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "target_id" integer NOT NULL, "achievement" integer NOT NULL, "result_memo" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210913073132_create_results.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210913073132"]]
+  ↳ bin/rails:9
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateGroupMessages (20210915041340)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "group_messages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "group_id" integer NOT NULL, "message" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210915041340_create_group_messages.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210915041340"]]
+  ↳ bin/rails:9
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateContacts (20210916103018)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "email" varchar NOT NULL, "message" text NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210916103018_create_contacts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210916103018"]]
+  ↳ bin/rails:9
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddDirectJoinToGroups (20210917075157)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "groups" ADD "direct_join" boolean DEFAULT 0 NOT NULL[0m
+  ↳ db/migrate/20210917075157_add_direct_join_to_groups.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210917075157"]]
+  ↳ bin/rails:9
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to RemoveOperationRightFromGroupMember (20210917080832)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "agroup_members" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "group_id" integer NOT NULL, "operation_right" integer DEFAULT 0 NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210917080832_remove_operation_right_from_group_member.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "agroup_members" ("id","user_id","group_id","operation_right","created_at","updated_at")
+                     SELECT "id","user_id","group_id","operation_right","created_at","updated_at" FROM "group_members"[0m
+  ↳ db/migrate/20210917080832_remove_operation_right_from_group_member.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "group_members"[0m
+  ↳ db/migrate/20210917080832_remove_operation_right_from_group_member.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "group_members" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "group_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210917080832_remove_operation_right_from_group_member.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "group_members" ("id","user_id","group_id","created_at","updated_at")
+                     SELECT "id","user_id","group_id","created_at","updated_at" FROM "agroup_members"[0m
+  ↳ db/migrate/20210917080832_remove_operation_right_from_group_member.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "agroup_members"[0m
+  ↳ db/migrate/20210917080832_remove_operation_right_from_group_member.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210917080832"]]
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddOperationRightToGroupMember (20210918024250)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "group_members" ADD "operation_right" integer DEFAULT 0 NOT NULL[0m
+  ↳ db/migrate/20210918024250_add_operation_right_to_group_member.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210918024250"]]
+  ↳ bin/rails:9
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddUserIdToResults (20210921112659)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "results" ADD "user_id" integer[0m
+  ↳ db/migrate/20210921112659_add_user_id_to_results.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210921112659"]]
+  ↳ bin/rails:9
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddGroupIdToResults (20210921112722)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "results" ADD "group_id" integer[0m
+  ↳ db/migrate/20210921112722_add_group_id_to_results.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210921112722"]]
+  ↳ bin/rails:9
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-09-21 11:36:27.880018"], ["updated_at", "2021-09-21 11:36:27.880018"]]
+  ↳ bin/rails:9
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 11:42:46 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_in" for 117.108.67.184 at 2021-09-21 11:42:46 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 65ms (Views: 55.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 117.108.67.184 at 2021-09-21 11:42:50 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"80rTIJjcGpI+/Vf5FqG64U70HZZGYxZiMP32Ire43kDA0llVKvG6L3KXR+OE640Rz6tk3Jg/BGn1OZutIlhE8A==", "user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "a@a"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.2ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"80rTIJjcGpI+/Vf5FqG64U70HZZGYxZiMP32Ire43kDA0llVKvG6L3KXR+OE640Rz6tk3Jg/BGn1OZutIlhE8A==", "user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 322ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 117.108.67.184 at 2021-09-21 11:42:53 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 117.108.67.184 at 2021-09-21 11:42:59 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wFu4P8K3R9jNReGn8zBBCVKXwmqAb+Jpx7qM/mnUcKG5NZlueruPM1ZrK2ECuow5EAjFLJtF7t68BldT0bF/kg==", "user"=>{"name"=>"aa", "email"=>"a@a", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "image"=>"{}", "is_email_receive"=>"true"}, "commit"=>"ユーザー登録"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@a"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "name", "is_email_receive", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "a@a"], ["encrypted_password", "$2a$12$8/4ImQgErsXr32IGTAxXROkwcr5mRPPmWznU2QKf0.3QgliSi9Tzm"], ["name", "aa"], ["is_email_receive", 1], ["image_id", nil], ["created_at", "2021-09-21 11:42:59.620089"], ["updated_at", "2021-09-21 11:42:59.620089"]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Redirected to https://4f572cf0a4f34750920dbb3b505cca72.vfs.cloud9.ap-northeast-1.amazonaws.com/users/1
+Completed 302 Found in 296ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/users/1" for 117.108.67.184 at 2021-09-21 11:42:59 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(group_id) desc". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from show at /home/ec2-user/environment/work_friend/app/controllers/users_controller.rb:21)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT  "group_members"."group_id" FROM "group_members" GROUP BY "group_members"."group_id" ORDER BY count(group_id) desc LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/controllers/users_controller.rb:21
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 51ms (Views: 37.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/groups" for 117.108.67.184 at 2021-09-21 11:43:00 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:10
+  Rendered groups/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 37.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/groups/new" for 117.108.67.184 at 2021-09-21 11:43:02 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/new.html.erb within layouts/application
+  Rendered groups/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 100ms (Views: 43.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/groups" for 117.108.67.184 at 2021-09-21 11:43:04 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cfT7t0ydYlCuy/WjSY3QzcGZBHBxpsvbSJt2svJMgzSnkiOvx6VJpBW7hvI1p6d4vgl3VyHP1GP1zJMO5fcW6w==", "group"=>{"name"=>"asdf", "intro"=>"", "image"=>"{}", "group_type"=>"work_group", "direct_join"=>"false"}, "commit"=>"グループ作成"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/groups_controller.rb:36
+  [1m[36mGroup Create (0.9ms)[0m  [1m[32mINSERT INTO "groups" ("name", "intro", "image_id", "group_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "asdf"], ["intro", ""], ["image_id", nil], ["group_type", 0], ["created_at", "2021-09-21 11:43:04.310808"], ["updated_at", "2021-09-21 11:43:04.310808"]]
+  ↳ app/controllers/groups_controller.rb:36
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/groups_controller.rb:36
+Unpermitted parameters: :utf8, :authenticity_token, :group, :commit
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/groups_controller.rb:42
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:42
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:42
+  [1m[36mGroupMember Create (0.7ms)[0m  [1m[32mINSERT INTO "group_members" ("user_id", "group_id", "created_at", "updated_at", "operation_right") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["group_id", 1], ["created_at", "2021-09-21 11:43:04.324873"], ["updated_at", "2021-09-21 11:43:04.324873"], ["operation_right", 1]]
+  ↳ app/controllers/groups_controller.rb:42
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/groups_controller.rb:42
+Redirected to https://4f572cf0a4f34750920dbb3b505cca72.vfs.cloud9.ap-northeast-1.amazonaws.com/groups/1
+Completed 302 Found in 25ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 11:43:04 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.7ms)
+
+
+  
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `last' for #<ActiveRecord::QueryMethods::WhereChain:0x00007ff16007a428>):
+  
+app/controllers/groups_controller.rb:21:in `show'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 11:43:29 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  Rendered groups/_work.html.erb (5.1ms)
+  Rendered groups/show.html.erb within layouts/application (10.2ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `chart_date' for nil:NilClass):
+     99: 
+    100:   <div class="graph">
+    101:     <h3>一週間達成度比較</h3>
+    102:     <%= column_chart @results.chart_date, class: "graph_size" %>
+    103:   </div>
+    104: 
+    105:   <div class="join">
+  
+app/views/groups/_work.html.erb:102:in `_app_views_groups__work_html_erb__2207882973132236092_70337452898560'
+app/views/groups/show.html.erb:40:in `_app_views_groups_show_html_erb___1989877386856786138_70337452816140'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 11:44:11 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (5.9ms)
+  Rendered groups/show.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 53ms (Views: 46.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/groups/1/targets" for 117.108.67.184 at 2021-09-21 11:44:14 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TargetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aS4mz97NfnGXZARfwJ1v87O1m7dMBdqPFICGilkQTtxatqy6bODezNsOFEVS11gDMuri/ZJZyITRROsFzPDUbA==", "target"=>{"user_id"=>"1", "group_id"=>"1", "target_content"=>"asd"}, "commit"=>"今日の目標登録", "group_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/targets_controller.rb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/targets_controller.rb:6
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/targets_controller.rb:6
+  [1m[36mTarget Create (0.9ms)[0m  [1m[32mINSERT INTO "targets" ("user_id", "group_id", "target_content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["group_id", 1], ["target_content", "asd"], ["created_at", "2021-09-21 11:44:14.311839"], ["updated_at", "2021-09-21 11:44:14.311839"]]
+  ↳ app/controllers/targets_controller.rb:6
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/targets_controller.rb:6
+Redirected to https://4f572cf0a4f34750920dbb3b505cca72.vfs.cloud9.ap-northeast-1.amazonaws.com/groups/1
+Completed 302 Found in 17ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 11:44:14 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (10.4ms)
+  Rendered groups/show.html.erb within layouts/application (13.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 55ms (Views: 49.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/targets/1/results" for 117.108.67.184 at 2021-09-21 11:44:17 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ResultsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Fge8+NeLLbZ3hmASwog4d6Psqa2aZYf5LYw8UEO2wY4lnzaNZaaNCzvscAhQwg+HIrPQ50Q5lfLoSFHf1lZbPg==", "result"=>{"target_id"=>"1", "user_id"=>"1", "group_id"=>"1", "achievement"=>"100"}, "commit"=>"登録", "target_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/results_controller.rb:6
+  [1m[36mTarget Load (0.2ms)[0m  [1m[34mSELECT  "targets".* FROM "targets" WHERE "targets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/results_controller.rb:6
+  [1m[36mResult Create (0.8ms)[0m  [1m[32mINSERT INTO "results" ("target_id", "achievement", "created_at", "updated_at", "user_id", "group_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["target_id", 1], ["achievement", 100], ["created_at", "2021-09-21 11:44:17.033064"], ["updated_at", "2021-09-21 11:44:17.033064"], ["user_id", 1], ["group_id", 1]]
+  ↳ app/controllers/results_controller.rb:6
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/results_controller.rb:6
+Redirected to https://4f572cf0a4f34750920dbb3b505cca72.vfs.cloud9.ap-northeast-1.amazonaws.com/groups/1
+Completed 302 Found in 15ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 11:44:17 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (10.8ms)
+  Rendered groups/show.html.erb within layouts/application (13.9ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 98ms (Views: 91.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/targets/1/results/1/edit" for 117.108.67.184 at 2021-09-21 11:44:20 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ResultsController#edit as HTML
+  Parameters: {"target_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT  "targets".* FROM "targets" WHERE "targets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/results_controller.rb:16
+  [1m[36mResult Load (0.2ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/results_controller.rb:17
+  Rendering results/edit.html.erb within layouts/application
+  Rendered results/edit.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 52ms (Views: 46.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/targets/1/results/1" for 117.108.67.184 at 2021-09-21 11:44:21 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ResultsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DPTrPiFVZKZYnkwO0ijQHfdrPArRq/YaVvHr7huaVZZtP7/KVMBmAq4BTApe+fqvSPWBCNTMr71yGOlG53gXVA==", "result"=>{"achievement"=>"100", "result_memo"=>"hgj,"}, "commit"=>"目標変更", "target_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/results_controller.rb:21
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT  "targets".* FROM "targets" WHERE "targets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/results_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/results_controller.rb:23
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT  "targets".* FROM "targets" WHERE "targets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/results_controller.rb:23
+  [1m[36mResult Update (0.9ms)[0m  [1m[33mUPDATE "results" SET "result_memo" = ?, "updated_at" = ? WHERE "results"."id" = ?[0m  [["result_memo", "hgj,"], ["updated_at", "2021-09-21 11:44:21.603135"], ["id", 1]]
+  ↳ app/controllers/results_controller.rb:23
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/results_controller.rb:23
+Redirected to https://4f572cf0a4f34750920dbb3b505cca72.vfs.cloud9.ap-northeast-1.amazonaws.com/groups/1
+Completed 302 Found in 17ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-21 11:44:21 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-20 15:00:00"], ["created_at", "2021-09-21 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 1], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (11.7ms)
+  Rendered groups/show.html.erb within layouts/application (15.2ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 61ms (Views: 54.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 117.108.67.184 at 2021-09-22 01:12:34 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 294ms (Views: 284.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 117.108.67.184 at 2021-09-22 01:12:36 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.2ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 98ms (Views: 83.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 117.108.67.184 at 2021-09-22 01:12:40 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5JXAVnHQxACs9/An3Q/a7Yva+yRlkuW6Nkfy6wEnwUrwsHgwQnsuOdCnEdvcoHRznsmXc9zRKxPBGeiFp6XN+Q==", "user"=>{"email"=>"a@a", "password"=>"[FILTERED]"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "a@a"], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Redirected to https://4f572cf0a4f34750920dbb3b505cca72.vfs.cloud9.ap-northeast-1.amazonaws.com/users/1
+Completed 302 Found in 937ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 117.108.67.184 at 2021-09-22 01:12:41 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "count(group_id) desc". Non-attribute arguments will be disallowed in Rails 6.0. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from show at /home/ec2-user/environment/work_friend/app/controllers/users_controller.rb:21)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT  "group_members"."group_id" FROM "group_members" GROUP BY "group_members"."group_id" ORDER BY count(group_id) desc LIMIT ?[0m  [["LIMIT", 3]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (5.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 121ms (Views: 70.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/groups" for 117.108.67.184 at 2021-09-22 01:12:43 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  ↳ app/views/groups/index.html.erb:10
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "group_members" WHERE "group_members"."group_id" = ?[0m  [["group_id", 1]]
+  ↳ app/views/groups/index.html.erb:14
+  Rendered groups/index.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 96ms (Views: 87.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-22 01:12:44 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.2ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."user_id" = ? AND "results"."group_id" = ? ORDER BY "results"."id" DESC LIMIT ?[0m  [["user_id", 1], ["group_id", 1], ["LIMIT", 7]]
+  ↳ app/controllers/groups_controller.rb:21
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.2ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-21 15:00:00"], ["created_at", "2021-09-22 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (11.4ms)
+  Rendered groups/show.html.erb within layouts/application (19.9ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 135ms (Views: 75.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-22 01:13:04 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."user_id" = ? AND "results"."group_id" = ? ORDER BY "results"."id" DESC LIMIT ?[0m  [["user_id", 1], ["group_id", 1], ["LIMIT", 7]]
+  ↳ app/controllers/groups_controller.rb:21
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-21 15:00:00"], ["created_at", "2021-09-22 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  Rendered groups/_work.html.erb (9.6ms)
+  Rendered groups/show.html.erb within layouts/application (15.7ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `chart_date' for #<Array:0x00007ff50c3cbb40>
+Did you mean?  chart_json):
+     99: 
+    100:   <div class="graph">
+    101:     <h3>一週間達成度比較</h3>
+    102:     <%= column_chart @results.chart_date, class: "graph_size" %>
+    103:   </div>
+    104: 
+    105:   <div class="join">
+  
+app/views/groups/_work.html.erb:102:in `_app_views_groups__work_html_erb___2076346802283987131_70345224552380'
+app/views/groups/show.html.erb:40:in `_app_views_groups_show_html_erb___1527924238409507168_70345224507620'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-22 01:14:22 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."user_id" = ? AND "results"."group_id" = ? ORDER BY "results"."id" DESC LIMIT ?[0m  [["user_id", 1], ["group_id", 1], ["LIMIT", 7]]
+  ↳ app/controllers/groups_controller.rb:21
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-21 15:00:00"], ["created_at", "2021-09-22 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (10.0ms)
+  Rendered groups/show.html.erb within layouts/application (17.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 97ms (Views: 87.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/groups/1/targets" for 117.108.67.184 at 2021-09-22 01:14:28 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TargetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lpp/SBknAHQt1NKCJHWQuDH0KKmeHM2MJ99wxwCRvgiZ9x20YkQUmFG20qT/2HxeUYQmy3MN6v9SfgueRDD6jQ==", "target"=>{"user_id"=>"1", "group_id"=>"1", "target_content"=>"asdf"}, "commit"=>"今日の目標登録", "group_id"=>"1"}
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (6.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/targets_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/targets_controller.rb:6
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/targets_controller.rb:6
+  [1m[36mTarget Create (1.9ms)[0m  [1m[32mINSERT INTO "targets" ("user_id", "group_id", "target_content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["group_id", 1], ["target_content", "asdf"], ["created_at", "2021-09-22 01:14:28.143834"], ["updated_at", "2021-09-22 01:14:28.143834"]]
+  ↳ app/controllers/targets_controller.rb:6
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/targets_controller.rb:6
+Redirected to https://4f572cf0a4f34750920dbb3b505cca72.vfs.cloud9.ap-northeast-1.amazonaws.com/groups/1
+Completed 302 Found in 39ms (ActiveRecord: 18.8ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-22 01:14:28 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."user_id" = ? AND "results"."group_id" = ? ORDER BY "results"."id" DESC LIMIT ?[0m  [["user_id", 1], ["group_id", 1], ["LIMIT", 7]]
+  ↳ app/controllers/groups_controller.rb:21
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-21 15:00:00"], ["created_at", "2021-09-22 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 2], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 2], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (18.2ms)
+  Rendered groups/show.html.erb within layouts/application (22.9ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 98ms (Views: 87.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/targets/2/results" for 117.108.67.184 at 2021-09-22 01:14:35 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ResultsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KnQwFWg6iFc0Twjh7l5+nGDG9ViIgcsTIGihKCd2+6qdGVLpE1mcu0gtCMc185J6ALb7OmWQ7GBVydpxY9e/Lw==", "result"=>{"target_id"=>"2", "user_id"=>"1", "group_id"=>"1", "achievement"=>"50"}, "commit"=>"登録", "target_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/results_controller.rb:6
+  [1m[36mTarget Load (0.2ms)[0m  [1m[34mSELECT  "targets".* FROM "targets" WHERE "targets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/results_controller.rb:6
+  [1m[36mResult Create (1.6ms)[0m  [1m[32mINSERT INTO "results" ("target_id", "achievement", "created_at", "updated_at", "user_id", "group_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["target_id", 2], ["achievement", 50], ["created_at", "2021-09-22 01:14:35.731636"], ["updated_at", "2021-09-22 01:14:35.731636"], ["user_id", 1], ["group_id", 1]]
+  ↳ app/controllers/results_controller.rb:6
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/results_controller.rb:6
+Redirected to https://4f572cf0a4f34750920dbb3b505cca72.vfs.cloud9.ap-northeast-1.amazonaws.com/groups/1
+Completed 302 Found in 22ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-22 01:14:35 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."user_id" = ? AND "results"."group_id" = ? ORDER BY "results"."id" DESC LIMIT ?[0m  [["user_id", 1], ["group_id", 1], ["LIMIT", 7]]
+  ↳ app/controllers/groups_controller.rb:21
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-21 15:00:00"], ["created_at", "2021-09-22 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 2], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 2], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 2], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (20.7ms)
+  Rendered groups/show.html.erb within layouts/application (25.7ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 101ms (Views: 90.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-22 01:30:21 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."user_id" = ? AND "results"."group_id" = ? ORDER BY "results"."id" DESC LIMIT ?[0m  [["user_id", 1], ["group_id", 1], ["LIMIT", 7]]
+  ↳ app/controllers/groups_controller.rb:21
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-21 15:00:00"], ["created_at", "2021-09-22 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 2], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 2], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 2], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  Rendered groups/_work.html.erb (19.0ms)
+  Rendered groups/show.html.erb within layouts/application (24.0ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `strftime' for :created_at:Symbol):
+     99: 
+    100:   <div class="graph">
+    101:     <h3>一週間達成度比較</h3>
+    102:     <%= column_chart @results.pluck(:created_at.strftime("/%m/%d"), :achievement), class: "graph_size" %>
+    103:   </div>
+    104: 
+    105:   <div class="join">
+  
+app/views/groups/_work.html.erb:102:in `_app_views_groups__work_html_erb___2076346802283987131_70345324497720'
+app/views/groups/show.html.erb:40:in `_app_views_groups_show_html_erb___1527924238409507168_70345324428700'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-22 01:30:42 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."user_id" = ? AND "results"."group_id" = ? ORDER BY "results"."id" DESC LIMIT ?[0m  [["user_id", 1], ["group_id", 1], ["LIMIT", 7]]
+  ↳ app/controllers/groups_controller.rb:21
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-21 15:00:00"], ["created_at", "2021-09-22 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 2], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 2], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 2], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  Rendered groups/_work.html.erb (18.9ms)
+  Rendered groups/show.html.erb within layouts/application (24.5ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `strftime' for :created_at:Symbol):
+     99: 
+    100:   <div class="graph">
+    101:     <h3>一週間達成度比較</h3>
+    102:     <%= column_chart @results.pluck(:created_at.strftime('%Y/%m/%d'), :achievement), class: "graph_size" %>
+    103:   </div>
+    104: 
+    105:   <div class="join">
+  
+app/views/groups/_work.html.erb:102:in `_app_views_groups__work_html_erb___2076346802283987131_70345133149940'
+app/views/groups/show.html.erb:40:in `_app_views_groups_show_html_erb___1527924238409507168_70345133092360'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-22 01:31:17 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."user_id" = ? AND "results"."group_id" = ? ORDER BY "results"."id" DESC LIMIT ?[0m  [["user_id", 1], ["group_id", 1], ["LIMIT", 7]]
+  ↳ app/controllers/groups_controller.rb:21
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.1ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-21 15:00:00"], ["created_at", "2021-09-22 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 2], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 2], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 2], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  Rendered groups/_work.html.erb (18.7ms)
+  Rendered groups/show.html.erb within layouts/application (26.9ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `strftime' for #<Array:0x00007ff50c4d0220>):
+     99: 
+    100:   <div class="graph">
+    101:     <h3>一週間達成度比較</h3>
+    102:     <%= column_chart @results.pluck(:created_at, :achievement).strftime('%Y/%m/%d'), class: "graph_size" %>
+    103:   </div>
+    104: 
+    105:   <div class="join">
+  
+app/views/groups/_work.html.erb:102:in `_app_views_groups__work_html_erb___2076346802283987131_70345224983900'
+app/views/groups/show.html.erb:40:in `_app_views_groups_show_html_erb___1527924238409507168_70345224939140'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-22 01:31:58 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[36mResult Load (0.2ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."user_id" = ? AND "results"."group_id" = ? ORDER BY "results"."id" DESC LIMIT ?[0m  [["user_id", 1], ["group_id", 1], ["LIMIT", 7]]
+  ↳ app/controllers/groups_controller.rb:21
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 4.8ms)
+
+
+  
+NoMethodError (undefined method `created_at' for #<Array:0x00007ff5012f9880>):
+  
+app/controllers/groups_controller.rb:22:in `show'
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-22 01:35:19 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."user_id" = ? AND "results"."group_id" = ? ORDER BY "results"."id" DESC LIMIT ?[0m  [["user_id", 1], ["group_id", 1], ["LIMIT", 7]]
+  ↳ app/controllers/groups_controller.rb:21
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.2ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.2ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-21 15:00:00"], ["created_at", "2021-09-22 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.2ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 2], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 2], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.2ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 2], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (26.8ms)
+  Rendered groups/show.html.erb within layouts/application (36.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 213ms (Views: 107.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/groups/1" for 117.108.67.184 at 2021-09-22 01:36:54 +0000
+Cannot render console from 117.108.67.184! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:10
+  [1m[36mGroupMember Load (0.1ms)[0m  [1m[34mSELECT  "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? LIMIT ?[0m  [["group_id", 1], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:11
+  [1m[36mResult Load (0.2ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."user_id" = ? AND "results"."group_id" = ? ORDER BY "results"."id" DESC LIMIT ?[0m  [["user_id", 1], ["group_id", 1], ["LIMIT", 7]]
+  ↳ app/controllers/groups_controller.rb:21
+  Rendering groups/show.html.erb within layouts/application
+  [1m[36mGroupMember Load (0.2ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mTarget Load (0.2ms)[0m  [1m[34mSELECT "targets".* FROM "targets" WHERE "targets"."group_id" = ? AND "targets"."created_at" BETWEEN ? AND ?[0m  [["group_id", 1], ["created_at", "2021-09-21 15:00:00"], ["created_at", "2021-09-22 14:59:59.999999"]]
+  ↳ app/views/groups/_work.html.erb:31
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:33
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 2], ["LIMIT", 1]]
+  ↳ app/models/target.rb:18
+  [1m[36mCACHE Result Load (0.0ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."target_id" = ? LIMIT ?[0m  [["target_id", 2], ["LIMIT", 1]]
+  ↳ app/views/groups/_work.html.erb:45
+  [1m[36mResult Load (0.1ms)[0m  [1m[34mSELECT  "results".* FROM "results" WHERE "results"."result_memo" != ? AND "results"."target_id" = ? LIMIT ?[0m  [["result_memo", ""], ["target_id", 2], ["LIMIT", 1]]
+  ↳ app/models/target.rb:23
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  [1m[36mCACHE GroupMember Load (0.0ms)[0m  [1m[34mSELECT "group_members".* FROM "group_members" WHERE "group_members"."group_id" = ? AND "group_members"."user_id" = ? AND "group_members"."group_id" = ?[0m  [["group_id", 1], ["user_id", 1], ["group_id", 1]]
+  ↳ app/models/group.rb:15
+  Rendered groups/_work.html.erb (23.2ms)
+  Rendered groups/show.html.erb within layouts/application (31.0ms)
+  Rendered layouts/_header.html.erb (11.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 183ms (Views: 109.3ms | ActiveRecord: 5.7ms)
+
+

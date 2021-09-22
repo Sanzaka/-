@@ -19,4 +19,7 @@ class Group < ApplicationRecord
   def self.looks(word)
     @user = Group.where("name LIKE?","%#{word}%")
   end
+
+ 
+
 end
