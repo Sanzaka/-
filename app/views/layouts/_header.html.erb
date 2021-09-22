@@ -3,7 +3,7 @@
 
   <% if user_signed_in? %>
     <ul class="menu">
-      <%= link_to root_path, class: "edit_link" do %>
+      <%= link_to my_group_path, class: "edit_link" do %>
         <li>マイグループ</li>
       <%end%>
       <%= link_to user_path(current_user.id), class: "edit_link" do %>

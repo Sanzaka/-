@@ -1,5 +1,5 @@
 <div class="group_index">
-  <h3>グループ一覧</h3>
+  <h3>所属している一覧</h3>
   <table class="borderless_table">
     <thead>
       <tr>
@@ -7,7 +7,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @groups.each do |group| %>
+      <% @my_groups.each do |group| %>
         <tr>
           <td class="td1">
             <% if group.group_type == "work_group" %>

@@ -7,6 +7,8 @@ class Result < ApplicationRecord
 
 
   belongs_to :target
+  belongs_to :user
+  belongs_to :group
 
   def self.chart_date
     order(created_at: :asc).pluck("created_at", "achievement").to_h

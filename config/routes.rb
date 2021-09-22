@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "search" => "searches#search", as: "search"
 
   get "group/:id/data" => "groups#data", as: "group_data"
+  get "my_group" => "groups#my_group", as: "my_group"
   resources :groups do
     resources :group_members, only: [:create, :destroy, :index] do
       member do

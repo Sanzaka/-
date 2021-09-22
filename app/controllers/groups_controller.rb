@@ -16,9 +16,10 @@ class GroupsController < ApplicationController
     @target = Target.new
     @result = Result.new
     @today_targets = Target.where(group_id: @group.id, created_at: Time.zone.now.all_day)
+    @today_my_target = Target.where(user_id: current_user.id, group_id: @group.id, created_at: Time.zone.now.all_day).count
 
     # グラフ部分
-    @results = Result.where(user_id: current_user.id, group_id: @group.id).last(7)
+    @results = Result.where(group_id: @group.id, created_at: Time.zone.now.all_day).order(:achievement).last(7)
 
 
     # friendグループ
@@ -67,6 +68,10 @@ class GroupsController < ApplicationController
     @group.destroy
     flash[:notice] = "グループの削除が完了しました！"
     redirect_to user_path(current_user.id)
+  end
+
+  def my_group
+    @my_groups = current_user.groups
   end
 
 

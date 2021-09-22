@@ -25,10 +25,5 @@
 #   user.save!
 # end
 
-user = User.new
-
-user.name = "name"
-user.email = 'test@example.com'
-user.password = '#$taawktljasktlw4aaglj'
-user.encrypted_password = '#$taawktljasktlw4aaglj'
+user = User.new(:name => 'ASDF', :email => 'hogehoge@hoge.com', :password => 'hugahuga', :is_email_receive => false)
 user.save!

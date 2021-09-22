@@ -4,12 +4,14 @@ class Group < ApplicationRecord
   validates :name, presence: true
   validates :group_type, presence: true
 
-
   has_many :group_members, dependent: :destroy
   has_many :users, through: :group_members
-  has_many :entry, dependent: :destroy
+  has_many :entries, dependent: :destroy
   has_many :targets, dependent: :destroy
   has_many :group_messages, dependent: :destroy
+  has_many :results, dependent: :destroy
+
+
 
   def user_exists?(user, group)
     group_members.where(user_id: user.id, group_id: group.id).present?
@@ -20,6 +22,8 @@ class Group < ApplicationRecord
     @user = Group.where("name LIKE?","%#{word}%")
   end
 
- 
+  def entry_exists?(user)
+    self.entries.find_by(group_id: self.id, user_id: user.id)
+  end
 
 end

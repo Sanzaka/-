@@ -1,3 +1,36 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//topページ
+.top_logo{
+  margin: 100px auto;
+  width: 960px;
+  height: 208px;
+  background-image:url(large_logo.png);
+  background-size: cover;
+}
+.exprain_box_1{
+  margin: 0 auto;
+  width: 70%;
+  background-color: white;
+  .exprain_head{
+    text-align: center;
+    margin: 50px auto;
+  }
+  .text_box{
+    display: flex;
+    justify-content: space-around;
+
+    .exprain_text{
+
+    }
+  }
+  .top_image{
+    background-image:url(top_image_1);
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+
+  }
+}
