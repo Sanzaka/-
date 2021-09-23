@@ -1,3 +1,41 @@
 // Place all the styles related to the group_members controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.entry_index{
+  .nothing{
+    text-align: center;
+  }
+  .borderless_table{
+    width: 45%;
+    margin: 0 auto;
+    border: 10px outset #CCFFCC;
+    background-color: white;
+    thead{
+
+      tr{
+
+        .th1{
+          padding: 5px;
+          width: 100px;
+        }
+        .th2{
+          padding: 5px;
+          width: 200px;
+        }
+      }
+    }
+    tbody{
+      tr{
+
+        .td1{
+          text-align: center;
+        }
+        .td2{
+          text-align: center;
+        }
+      }
+    }
+  }
+}

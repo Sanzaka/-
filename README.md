@@ -58,5 +58,7 @@ https://docs.google.com/spreadsheets/d/178dycEylNMqOj1b7khhm3Ysf7JPfD8EfsSyuCKvb
 - https://illustrain.com/?p=15927
 - https://illustrain.com/?p=26385
 - https://illustrain.com/?p=13905
+- https://illustrain.com/?p=18341
+- https://illustrain.com/?p=18347
 # ロゴ
 - https://logo-maker.stores.jp/

@@ -1,32 +1,17 @@
 <div class="top">
   <div class="top_logo"></div>
-
-  <div class="exprain_box_1">
-    <h1 class="exprain_head">新社会人へ</h1>
-    <div class="text_box">
-
-      <div class="exprain_text">
-        このサイトでは、<br>
-        みんなで目標を定め、それに向けて努力するための<strong>workグループ</strong><br>
-        仲間同士で楽しく会話、相談するための<strong>friendグループ</strong><br>
-        を作成することができます。<br>
-        就職したばかりの時期は、一人で乗り越えるには<br>とても大きなハードルになりうると思います。<br>
-        そんなハードルも、グループの仲間がいれば、<br>乗り越えられるのではないでしょうか。
-      </div>
-    <div class="top_image"></div>
-  </div>
-
-  <div class="exprain_box_2">
-    <div class="text_box">
-      <h3 class="exprain_head">text head</h3>
-      <div class="exprain_text">text</div>
-    </div>
-    <div class="top_image"></div>
-  </div>
+  <div class="intro1"></div>
+  <div class="intro2"></div>
+  <div class="intro3"></div>
+  <div class="intro4"></div>
 
   <h1>さぁ、今すぐ始めよう！</h1>
   <div class="button">
-    <%= link_to "新規登録", new_user_registration_path, class: "sign_up" %>
-    <%= link_to "ログイン", new_user_session_path, class: "sign_in" %>
+    <%= link_to  new_user_registration_path, class: "sign_up edit_link" do %>
+      <div class="blue_btn">新規登録</div>
+    <%end%>
+    <%= link_to  new_user_session_path, class: "sign_in edit_link" do %>
+      <div class="green_btn">ログイン</div>
+    <%end%>
   </div>
 </div>

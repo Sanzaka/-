@@ -3,34 +3,71 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //topページ
-.top_logo{
-  margin: 100px auto;
-  width: 960px;
-  height: 208px;
-  background-image:url(large_logo.png);
-  background-size: cover;
-}
-.exprain_box_1{
-  margin: 0 auto;
-  width: 70%;
-  background-color: white;
-  .exprain_head{
-    text-align: center;
-    margin: 50px auto;
+.top{
+  .top_logo{
+    margin: 100px auto;
+    width: 960px;
+    height: 208px;
+    background-image:url(large_logo.png);
+    background-size: cover;
   }
-  .text_box{
+  .intro1{
+    width: 960px;
+    height: 540px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-image:url(top1.png);
+    background-size: cover;
+  }
+  .intro2{
+    width: 960px;
+    height: 540px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-image:url(top2.png);
+    background-size: cover;
+  }
+  .intro3{
+    width: 960px;
+    height: 540px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-image:url(top3.png);
+    background-size: cover;
+  }
+  .intro4{
+    width: 960px;
+    height: 540px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-image:url(top4.png);
+    background-size: cover;
+  }
+
+  h1{
+    margin: 50px 0;
+    text-align: center;
+    border: 3px solid;
+    background-color: white;
+  }
+  .button{
     display: flex;
-    justify-content: space-around;
-
-    .exprain_text{
-
+    justify-content: center;
+    .edit_link{
+      margin: 0 50px 50px;
+      .blue_btn{
+        width: 200px;
+        height: 100px;
+        line-height: 100px;
+        font-size: 30px;
+      }
+      .green_btn{
+        width: 200px;
+        height: 100px;
+        line-height: 100px;
+        font-size: 30px;
+      }
     }
   }
-  .top_image{
-    background-image:url(top_image_1);
-    background-size: cover;
-    width: 300px;
-    height: 300px;
-
-  }
 }
+

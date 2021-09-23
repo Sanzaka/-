@@ -104,7 +104,7 @@
     </div>
 
     <div class="graph">
-      <h3>一週間達成度比較</h3>
+      <h3>今日の達成度比較</h3>
       <%= column_chart @results.pluck(:created_at, :achievement), class: "graph_size" %>
     </div>
 

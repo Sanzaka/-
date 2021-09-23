@@ -196,6 +196,8 @@ $space: 30px;
   .borderless_table{
     width: 45%;
     margin: 0 auto;
+    border: 10px outset #CCFFCC;
+    background-color: white;
     thead{
 
       tr{
