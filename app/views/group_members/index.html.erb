@@ -9,7 +9,7 @@
     <tbody>
       <% @group_members.each do |member| %>
         <tr>
-          <td class="td1"><%= attachment_image_tag member.user, :image, format: "jpeg", size: "100x100", class: "image"%></td>
+          <td class="td1"><%= attachment_image_tag member.user, :image, format: "jpeg", size: "100x100", class: "image", fallback: "user.png"%></td>
           <td class="td2"><%= member.user.name %></td>
         </tr>
       <%end%>

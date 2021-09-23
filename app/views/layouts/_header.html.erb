@@ -3,30 +3,30 @@
 
   <% if user_signed_in? %>
     <ul class="menu">
-      <%= link_to root_path, class: "edit_link" do %>
-        <li>マイグループ</li>
+      <%= link_to my_group_path, class: "edit_link" do %>
+        <li class="green_btn">マイグループ</li>
       <%end%>
       <%= link_to user_path(current_user.id), class: "edit_link" do %>
-        <li>マイページ</li>
+        <li class="green_btn">マイページ</li>
       <%end%>
       <%= link_to root_path ,class: "edit_link" do %>
-        <li class="menu-item">TOP</li>
+        <li class="green_btn">TOP</li>
       <%end%>
       <%= link_to destroy_user_session_path, method: :delete, class: "edit_link" do %>
-        <li>ログアウト</li>
+        <li class="green_btn">ログアウト</li>
       <%end%>
     </ul>
 
   <% else %>
     <ul class="menu">
       <%= link_to new_user_registration_path, class: "edit_link" do %>
-        <li>新規登録</li>
+        <li class="green_btn">新規登録</li>
       <%end%>
       <%= link_to new_user_session_path, class: "edit_link" do %>
-        <li>ログイン</li>
+        <li class="green_btn">ログイン</li>
       <%end%>
       <%= link_to root_path ,class: "edit_link" do %>
-        <li class="menu-item">TOP</li>
+        <li class="green_btn">TOP</li>
       <%end%>
     </ul>
   <%end%>

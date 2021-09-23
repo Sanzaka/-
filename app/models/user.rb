@@ -12,9 +12,12 @@ class User < ApplicationRecord
 
 
   has_many :group_members, dependent: :destroy
+  has_many :groups, through: :group_members
   has_many :entry, dependent: :destroy
   has_many :targets, dependent: :destroy
   has_many :group_messages, dependent: :destroy
+  has_many :results, dependent: :destroy
+
 
   # 検索機能、名前が一致している部分があるuserを返す
   def self.looks(word)

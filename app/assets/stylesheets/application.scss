@@ -35,10 +35,14 @@ $space: 30px;
   display: flex;
   justify-content: center;
   .info{
-    width: 30%;
+    width: 20%;
+    border: 10px outset #CCFFCC;
+    background-color: white;
   }
   .main{
     width: 60%;
+    border: 10px outset #CCFFCC;
+    background-color: white;
   }
 }
 
@@ -57,6 +61,27 @@ $space: 30px;
   border-radius: 15px;
   color: white;
   margin: 0 auto;
+  &:hover{
+    color: pink;
+    width: 120px;
+  }
+}
+
+.blue_btn{
+  width: 100px;
+  height: 50px;
+  background-color: blue;
+  margin-right: 20px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 15px;
+  color: white;
+  margin: 0 auto;
+  &:hover{
+    color: pink;
+    width: 120px;
+
+  }
 }
 
 .red_btn{
@@ -69,6 +94,10 @@ $space: 30px;
   border-radius: 15px;
   color: white;
   margin: 30px auto;
+  &:hover{
+    color: pink;
+    width: 120px;
+  }
 }
 
 // submit用暫定ボタン
@@ -117,29 +146,27 @@ body{
   position: relative;
   padding-bottom: 60px;
   .header{
+    top: 0;
+    width: 100%;
     background-color: #A0D3D9;
     display: flex;
     justify-content: space-between;
     .logo{
       width: 300px;
       height: 70px;
+      margin-left: 50px;
+      background-image:url(large_logo.png);
+      background-color: $light_blue;
+      background-size: cover;
     }
     ul{
+      margin-right: 50px;
       display: flex;
       flex-direction: row-reverse;
       list-style: none;
       align-items: center;
       .edit_link{
-        li{
-        width: 100px;
-        height: 50px;
-        background-color: #4F8C32;
-        margin-right: 20px;
-        text-align: center;
-        line-height: 50px;
-        border-radius: 15px;
-        color: white;
-        }
+        li{}
       }
     }
   }
