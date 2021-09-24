@@ -165,12 +165,12 @@ $space: 30px;
           margin-bottom: 10px;
           .icon{
             text-align: center;
-            flex-grow: 1;
+            width: 10%;
             .name{}
           }
           .text{
             justify-content: start;
-            flex-grow: 5;
+            width: 70%;
             background-color: #A0D3D9;
             border-bottom: solid 7px #394D59;
             border-radius: 10px;
@@ -178,7 +178,10 @@ $space: 30px;
           }
           .reaction{
             text-align: center;
-            flex-grow: 1;
+            width: 20%;
+            .time{
+              margin-top: 10px;
+            }
           }
         }
       }

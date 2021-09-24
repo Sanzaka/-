@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
 
     # friendグループ
     @message = GroupMessage.new
-    @messages = GroupMessage.where(group_id: @group.id)
+    @messages = GroupMessage.where(group_id: @group.id).order(id: "desc")
   end
 
   def new

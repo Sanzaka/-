@@ -3,7 +3,7 @@ class Result < ApplicationRecord
   validates :user_id, presence: true
   validates :group_id, presence: true
   validates :target_id, presence: true
-  validates :achievement, presence: {}
+  validates :achievement, numericality: {less_than_or_equal_to: 100}
 
 
   belongs_to :target
