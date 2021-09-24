@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
@@ -17,3 +19,18 @@
 
 //= require chartkick
 //= require Chart.bundle
+
+//notice, alertは５秒表示
+$(function(){
+  $('.notice').delay(500).slideDown();
+});
+$(function(){
+  $('.notice').delay(5000).slideUp();
+});
+
+$(function(){
+  $('.alert').delay(500).slideDown();
+});
+$(function(){
+  $('.alert').delay(5000).slideUp();
+});
