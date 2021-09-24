@@ -42,7 +42,7 @@ class GroupMembersController < ApplicationController
     @direct_join.user_id = current_user.id
     @direct_join.group_id = params[:group_id]
     @direct_join.save!
-    flash[:notice] = "メンバーを追加しました！"
+    flash[:notice] = "グループに加わりました！"
     redirect_to group_path(params[:group_id])
   end
 
