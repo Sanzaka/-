@@ -38,6 +38,10 @@ $space: 30px;
     width: 20%;
     border: 10px outset #CCFFCC;
     background-color: white;
+    h3{
+      margin-top: 20px;
+      background-color: #EEEEEE;
+    }
   }
   .main{
     width: 60%;
@@ -63,7 +67,7 @@ $space: 30px;
   margin: 0 auto;
   &:hover{
     color: pink;
-    width: 120px;
+    border: 2px solid;
   }
 }
 
@@ -79,8 +83,7 @@ $space: 30px;
   margin: 0 auto;
   &:hover{
     color: pink;
-    width: 120px;
-
+    border: 2px solid;
   }
 }
 
@@ -96,7 +99,7 @@ $space: 30px;
   margin: 30px auto;
   &:hover{
     color: pink;
-    width: 120px;
+    border: 2px solid;
   }
 }
 
@@ -109,12 +112,18 @@ $space: 30px;
   background-color: $green;
   color: white;
   border: 0;
+  &:hover{
+    color: pink;
+    border: 1px solid;
+  }
 }
 
 //form
 .text_form{
   width: 40%;
   margin: 0 auto;
+  border: 10px outset #CCFFCC;
+  background-color: white;
   .field{
     padding-bottom: $space;
     display: flex;
@@ -139,6 +148,27 @@ $space: 30px;
 
 
 //application
+.notice{
+  position : absolute;
+  left: 0;
+  right: 0;
+  top: 70px;
+  text-align: center;
+  background-color: blue;
+  color: white;
+}
+.alert{
+  position : absolute;
+  left: 0;
+  right: 0;
+  top: 70px;
+  margin : 0 auto;
+  text-align: center;
+  background-color: red;
+  color: white;
+}
+
+
 body{
   background-color: $white;
   // 最下部にフッターを固定させるための記述
@@ -151,6 +181,7 @@ body{
     background-color: #A0D3D9;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 40px;
     .logo{
       width: 300px;
       height: 70px;

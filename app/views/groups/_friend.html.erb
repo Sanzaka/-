@@ -1,5 +1,6 @@
 <div class="friend">
   <h3>フレンドグループ</h3>
+  <%if @group.user_exists?(current_user, @group) %>
   <div class="comment">
     <%= form_with(model: [@group, @message], local: true) do |f| %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -40,4 +41,45 @@
       </div>
     <%end%>
   </div>
+  <div class="leave">
+      <% if @group.user_exists?(current_user, @group) && @my_group_status.operation_right == 0 %>
+        <%= link_to group_group_member_path(@group, current_user.id), method: :delete, data: {confirm: "このグループを退会します。本当によろしいですか？"}, class: "edit_link" do %>
+          <div class="red_btn">グループ退会</div>
+        <%end%>
+      <%else%>
+        ＊退会不可能です
+      <%end%>
+    </div>
+
+
+  <%else%>
+  <!--このグループのメンバーでない場合の表示-->
+  <div class="join">
+    <div>メンバーではないため、情報を閲覧することができません！</div>
+    <% if @group.direct_join == true %>
+      <div class="action">
+        <%= form_with(url: direct_group_group_member_path(@group.id), model:[@group, @direct_join], local: true) do |f| %>
+          <%= f.submit "加入", class: "big_btn" %>
+        <%end%>
+        <div>＊すぐに加入できます！</div>
+      </div>
+
+
+    <%else%>
+      <!--加入申請がすでに送られている場合は、加入申請を送れない-->
+      <% unless @group.entry_exists?(current_user) %>
+        <%= form_with(model:[@group, @entry], local: true) do |f| %>
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+          <%= f.hidden_field :group_id, :value => @group.id %>
+          <div class="action">
+            <%= f.submit "加入", class: "big_btn" %>
+            <div>＊加入申請を送信します！</div>
+          </div>
+        <%end%>
+      <%else%>
+        <div>申請を送りました！承諾された場合、グループを利用することができます！</div>
+      <%end%>
+    <%end%>
+  </div>
+  <%end%>
 </div>

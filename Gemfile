@@ -69,7 +69,7 @@ gem "refile-mini_magick"
 gem "rails-i18n"
 gem "devise-i18n"
 gem "faker"
-
+gem "jquery-rails"
 
 
 gem 'dotenv-rails'
