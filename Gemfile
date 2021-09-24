@@ -69,6 +69,7 @@ gem "refile-mini_magick"
 gem "rails-i18n"
 gem "devise-i18n"
 gem "jquery-rails"
+gem "whenever", require: false
 
 
 gem 'dotenv-rails'
