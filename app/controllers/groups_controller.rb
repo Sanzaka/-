@@ -25,6 +25,7 @@ class GroupsController < ApplicationController
     # friendグループ
     @message = GroupMessage.new
     @messages = GroupMessage.where(group_id: @group.id).order(id: "desc")
+    @stamp = Stamp.new
   end
 
   def new
