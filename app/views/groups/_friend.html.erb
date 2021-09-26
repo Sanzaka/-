@@ -17,69 +17,30 @@
   </div>
 
   <div class="messages">
-    <% @messages.each do |m| %>
+    <% @messages.each do |msg| %>
       <div class="content">
 
         <div class="icon">
-          <%= attachment_image_tag m.user, :image, format: "jpeg", size: "70x70", class: "image", fallback: "user.png"%>
+          <%= attachment_image_tag msg.user, :image, format: "jpeg", size: "70x70", class: "image", fallback: "user.png"%>
           <div class="name">
-            <%= m.user.name %>
+            <%= msg.user.name %>
           </div>
         </div>
 
         <div class="text">
-          <%= m.message %>
+          <%= msg.message %>
         </div>
 
         <div class="reaction">
-          <div class="time"><%= l m.created_at, format: :short %></div>
+          <div class="time"><%= l msg.created_at, format: :short %></div>
 
-          <div class="stamp">
-            <div>
-              <% if m.stamp1_exists?(current_user.id, m.id) %>
-                <%= link_to group_stamp_path(@group.id, m.id, choose_stamp: 1), method: :delete do %>
-                  <div class="true_stamp_1"></div><%= m.stamp_count1.count %>
-                <%end%>
-              <%else%>
-                <%= form_with(model: [@group, @stamp], local: true) do |f| %>
-                  <%= f.hidden_field :choose_stamp, :value => 1 %>
-                  <%= hidden_field_tag :message_id, m.id %>
-                  <%= f.submit class: "stamp_1" %><%= m.stamp_count1.count %>
-                <%end%>
-              <%end%>
-            </div>
-
-            <div>
-              <% if m.stamp2_exists?(current_user.id, m.id) %>
-                <%= link_to group_stamp_path(@group.id, m.id, choose_stamp: 2), method: :delete do %>
-                  <div class="true_stamp_2"></div><%= m.stamp_count2.count %>
-                <%end%>
-              <%else%>
-                <%= form_with(model: [@group, @stamp], local: true) do |f| %>
-                  <%= f.hidden_field :choose_stamp, :value => 2 %>
-                  <%= hidden_field_tag :message_id, m.id %>
-                  <%= f.submit class: "stamp_2" %><%= m.stamp_count2.count %>
-                <%end%>
-              <%end%>
-            </div>
-
-            <div>
-              <% if m.stamp3_exists?(current_user.id, m.id) %>
-                <%= link_to group_stamp_path(@group.id, m.id, choose_stamp: 3), method: :delete do %>
-                  <div class="true_stamp_3"></div><%= m.stamp_count3.count %>
-                <%end%>
-              <%else%>
-                <%= form_with(model: [@group, @stamp], local: true) do |f| %>
-                  <%= f.hidden_field :choose_stamp, :value => 3 %>
-                  <%= hidden_field_tag :message_id, m.id %>
-                  <%= f.submit class: "stamp_3" %><%= m.stamp_count3.count %>
-                <%end%>
-              <%end%>
-            </div>
+          <div id="stamp_id_<%= msg.id %>">
+            <%= render 'groups/stamp', msg: msg %>
           </div>
 
-          <% if m.user_id == current_user.id %>
-            <%= link_to group_group_message_path(@group, m), method: :delete, class: "edit_link" do %>
+
+          <% if msg.user_id == current_user.id %>
+            <%= link_to group_group_message_path(@group, msg), method: :delete, class: "edit_link" do %>
               <div class="red_btn">削除</div>
             <%end%>
           <%end%>

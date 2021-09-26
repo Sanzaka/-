@@ -1,0 +1,43 @@
+<div class="stamp">
+  <div>
+    <% if msg.stamp1_exists?(current_user.id, msg.id) %>
+      <%= link_to group_stamp_path(@group.id, msg.id, choose_stamp: 1, message_id: msg.id), method: :delete, remote: true do %>
+        <div class="true_stamp_1"></div><%= msg.stamp_count1.count %>
+      <%end%>
+    <%else%>
+      <%= form_with(model: [@group, @stamp]) do |f| %>
+        <%= f.hidden_field :choose_stamp, :value => 1 %>
+        <%= hidden_field_tag :message_id, msg.id %>
+        <%= f.submit class: "stamp_1" %><div><%= msg.stamp_count1.count %></div>
+      <%end%>
+    <%end%>
+  </div>
+
+  <div>
+    <% if msg.stamp2_exists?(current_user.id, msg.id) %>
+      <%= link_to group_stamp_path(@group.id, msg.id, choose_stamp: 2, message_id: msg.id), method: :delete, remote: true do %>
+        <div class="true_stamp_2"></div><%= msg.stamp_count2.count %>
+      <%end%>
+    <%else%>
+      <%= form_with(model: [@group, @stamp]) do |f| %>
+        <%= f.hidden_field :choose_stamp, :value => 2 %>
+        <%= hidden_field_tag :message_id, msg.id %>
+        <%= f.submit class: "stamp_2" %><div><%= msg.stamp_count2.count %></div>
+      <%end%>
+    <%end%>
+  </div>
+
+  <div>
+    <% if msg.stamp3_exists?(current_user.id, msg.id) %>
+      <%= link_to group_stamp_path(@group.id, msg.id, choose_stamp: 3, message_id: msg.id), method: :delete, remote: true do %>
+        <div class="true_stamp_3"></div><%= msg.stamp_count3.count %>
+      <%end%>
+    <%else%>
+      <%= form_with(model: [@group, @stamp]) do |f| %>
+        <%= f.hidden_field :choose_stamp, :value => 3 %>
+        <%= hidden_field_tag :message_id, msg.id %>
+        <%= f.submit class: "stamp_3" %><div><%= msg.stamp_count3.count %></div>
+      <%end%>
+    <%end%>
+  </div>
+</div>
