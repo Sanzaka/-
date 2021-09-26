@@ -10,6 +10,7 @@ class Group < ApplicationRecord
   has_many :targets, dependent: :destroy
   has_many :group_messages, dependent: :destroy
   has_many :results, dependent: :destroy
+  has_many :stamps, dependent: :destroy
 
 
 

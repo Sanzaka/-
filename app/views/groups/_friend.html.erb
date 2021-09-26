@@ -17,24 +17,30 @@
   </div>
 
   <div class="messages">
-    <% @messages.each do |m| %>
+    <% @messages.each do |msg| %>
       <div class="content">
 
         <div class="icon">
-          <%= attachment_image_tag m.user, :image, format: "jpeg", size: "70x70", class: "image", fallback: "user.png"%>
+          <%= attachment_image_tag msg.user, :image, format: "jpeg", size: "70x70", class: "image", fallback: "user.png"%>
           <div class="name">
-            <%= m.user.name %>
+            <%= msg.user.name %>
           </div>
         </div>
 
         <div class="text">
-          <%= m.message %>
+          <%= msg.message %>
         </div>
 
         <div class="reaction">
-          <div class="time"><%= l m.created_at, format: :short %></div>
-          <% if m.user_id == current_user.id %>
-            <%= link_to group_group_message_path(@group, m), method: :delete, class: "edit_link" do %>
+          <div class="time"><%= l msg.created_at, format: :short %></div>
+
+          <div id="stamp_id_<%= msg.id %>">
+            <%= render 'groups/stamp', msg: msg %>
+          </div>
+
+
+          <% if msg.user_id == current_user.id %>
+            <%= link_to group_group_message_path(@group, msg), method: :delete, class: "edit_link" do %>
               <div class="red_btn">削除</div>
             <%end%>
           <%end%>

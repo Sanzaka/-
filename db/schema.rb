@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_21_112722) do
+ActiveRecord::Schema.define(version: 2021_09_25_102649) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(version: 2021_09_21_112722) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "group_id"
+  end
+
+  create_table "stamps", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "group_id"
+    t.integer "group_message_id", null: false
+    t.integer "choose_stamp", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "targets", force: :cascade do |t|

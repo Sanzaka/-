@@ -17,6 +17,7 @@ class User < ApplicationRecord
   has_many :targets, dependent: :destroy
   has_many :group_messages, dependent: :destroy
   has_many :results, dependent: :destroy
+  has_many :stamps, dependent: :destroy
 
 
   # 検索機能、名前が一致している部分があるuserを返す

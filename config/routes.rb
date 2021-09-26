@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "homes#top", as: "root"
-  get "tutorial" => "homes#tutorial", as: "tutorial"
 
   resources :users, only:[:show, :edit, :update]
   get "search" => "searches#search", as: "search"
@@ -19,6 +18,7 @@ Rails.application.routes.draw do
     resources :entries, only: [:create, :index, :destroy]
     resources :targets, only: [:create, :edit, :update, :destroy]
     resources :group_messages, only: [:create, :destroy]
+    resources :stamps, only: [:create, :destroy]
   end
 
   resources :targets, only: [:create, :edit, :update, :destroy] do
