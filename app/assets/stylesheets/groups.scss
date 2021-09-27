@@ -186,13 +186,13 @@ $space: 30px;
             .stamp{
               display: flex;
               .true_stamp_1{
-                background-image:url(true_good.png);
+                background-image:image-url(true_good.png);
                 width: 16px;
                 height: 16px;
                 margin: 10px;
               }
               .stamp_1{
-                background-image:url(good.png);
+                background-image:image-url(good.png);
                 width: 16px;
                 height: 16px;
                 border: 0;
@@ -200,13 +200,13 @@ $space: 30px;
                 margin: 10px;
               }
               .true_stamp_2{
-                background-image:url(true_link.png);
+                background-image:image-url(true_link.png);
                 width: 16px;
                 height: 16px;
                 margin: 10px;
               }
               .stamp_2{
-                background-image:url(link.png);
+                background-image:image-url(link.png);
                 width: 16px;
                 height: 16px;
                 border: 0;
@@ -214,13 +214,13 @@ $space: 30px;
                 margin: 10px;
               }
               .true_stamp_3{
-                background-image:url(true_question.png);
+                background-image:image-url(true_question.png);
                 width: 16px;
                 height: 16px;
                 margin: 10px;
               }
               .stamp_3{
-                background-image:url(question.png);
+                background-image:image-url(question.png);
                 width: 16px;
                 height: 16px;
                 border: 0;
