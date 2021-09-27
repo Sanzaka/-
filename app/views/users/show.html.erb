@@ -11,7 +11,7 @@
       <%= @user.intro %>
     </div>
     <%= link_to edit_user_path, class: "edit_link" do %>
-      <div class="green_btn">情報変更</div>
+      <button class="green_btn">情報変更</button>
     <%end%>
   </div>
   <div class="main">
@@ -50,23 +50,15 @@
         <%end%>
       </div>
 
+      <div>
+        <%= link_to groups_path, class: "edit_link" do %>
+          <button class="green_btn">グループ一覧</button>
+        <%end%>
+        <%= link_to new_group_path, class: "edit_link" do %>
+          <button class="green_btn">グループ作成</button>
+        <%end%>
+      </div>
 
-      <%= link_to groups_path, class: "edit_link" do %>
-        <div class="green_btn">グループ一覧</div>
-      <%end%>
-      <%= link_to new_group_path, class: "edit_link" do %>
-        <div class="green_btn">グループ作成</div>
-      <%end%>
-    </div>
-
-
-    <div>人気ユーザー</div>
-    <!--ユーザーランキング機能実装予定（いいね数）-->
-    <div class="search">
-      <!--グループ検索機能実装予定-->
-    </div>
-    <div class="search">
-      <!--フレンド検索機能実装予定-->
     </div>
 
     <div class="contact">

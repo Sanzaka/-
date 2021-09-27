@@ -53,7 +53,7 @@
   <div class="leave">
       <% if @group.user_exists?(current_user, @group) && @my_group_status.operation_right == 0 %>
         <%= link_to group_group_member_path(@group, current_user.id), method: :delete, data: {confirm: "このグループを退会します。本当によろしいですか？"}, class: "edit_link" do %>
-          <div class="red_btn">グループ退会</div>
+          <button class="red_btn">グループ退会</button>
         <%end%>
       <%else%>
         ＊退会不可能です
