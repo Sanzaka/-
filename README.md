@@ -33,7 +33,6 @@ friendグループでは、自身の職場の人だけでなく、業種問わ�
 - 職場での悩みや相談事は、friendグループで相談しよう。ネット上の仲間でも、仕事仲間同士で解決しやすいはずです。
 
 ## 設計書
-（2021/9/2メモ 修正予定です。）
 - アプリケーション詳細設計
 https://docs.google.com/spreadsheets/d/1MbS9bvr6YCxmtlCr3Lr_VrzgliGw0O1E/edit?usp=sharing&ouid=106713352819813158015&rtpof=true&sd=true
 - ER図

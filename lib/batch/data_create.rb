@@ -44,5 +44,4 @@ class Batch::DataCreate
     end
   end
 
-
 end
