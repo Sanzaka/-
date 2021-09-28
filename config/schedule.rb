@@ -1,5 +1,6 @@
+require File.expand_path(File.dirname(__FILE__) + "/environment")
 set :output, "log/crontab.log"
-set :environment, :development
+set :environment, :production
 
 every 1.day, at: "07:00 am" do
   runner "Batch::DataCreate.target_create"
