@@ -16,6 +16,7 @@ module WorkFriend
     config.time_zone = 'Asia/Tokyo'
     # バッチ処理のファイル読み込み
     config.autoload_paths += Dir["#{config.root}/lib"]
+    config.eager_load_paths += Dir["#{config.root}/lib/**/"]
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
