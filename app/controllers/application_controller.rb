@@ -8,10 +8,6 @@ class ApplicationController < ActionController::Base
     user_path(current_user)
   end
 
-  def after_inactive_sign_up_path_for(resource)
-    tutorial_path
-  end
-
   protected
 
   def configure_permitted_parameters

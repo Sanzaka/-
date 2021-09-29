@@ -44,8 +44,4 @@ class Batch::DataCreate
     end
   end
 
-  def self.test
-    puts "test"
-  end
-
 end

@@ -3,6 +3,9 @@ class ResultsController < ApplicationController
 
   def create
     result = Result.new(result_params)
+    result.target_id = params[:target_id]
+    result.user_id = current_user.id
+    result.group_id = result.target.group_id
     if result.save
       flash[:notice] = "取組結果を保存しました！"
       redirect_to group_path(result.target.group_id)

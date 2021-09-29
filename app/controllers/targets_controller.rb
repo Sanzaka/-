@@ -3,6 +3,8 @@ class TargetsController < ApplicationController
 
   def create
     target = Target.new(target_params)
+    target.user_id = current_user.id
+    target.group_id = params[:group_id]
     if target.save
       flash[:notice] = "今日の目標を登録しました！"
       redirect_to request.referer

@@ -12,7 +12,7 @@
       <tbody>
         <% @entries.each do |entry| %>
           <tr>
-            <td class="td1"><%= attachment_image_tag entry.user, :image, format: "jpeg", size: "100x100", class: "image"%></td>
+            <td class="td1"><%= attachment_image_tag entry.user, :image, format: "jpeg", size: "100x100", class: "image", fallback: "user.png" %></td>
             <td class="td2"><%= entry.user.name %></td>
             <td class="td3">
               <%= form_with(model:[@group, @group_member], local:true) do |f| %>

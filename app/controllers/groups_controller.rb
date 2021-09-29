@@ -8,18 +8,18 @@ class GroupsController < ApplicationController
   def show
     # 共通するインスタンス変数
     @group = Group.find(params[:id])
-    @my_group_status = GroupMember.find_by(group_id: @group, user_id: current_user.id)
+    @my_group_status = @group.group_members.find_by(group_id: @group, user_id: current_user.id)
     @entry = Entry.new
     @direct_join = GroupMember.new
 
     # workグループ
     @target = Target.new
     @result = Result.new
-    @today_targets = Target.where(group_id: @group.id, created_at: Time.zone.now.all_day)
-    @today_my_target = Target.where(user_id: current_user.id, group_id: @group.id, created_at: Time.zone.now.all_day).count
+    @today_targets = @group.targets.where(created_at: Time.zone.now.all_day)
+    @today_my_target = @today_targets.where(user_id: current_user.id).count
 
     # グラフ部分
-    @results = Result.where(group_id: @group.id, created_at: Time.zone.now.all_day).order(:achievement).last(7)
+    @results = @group.results.where(created_at: Time.zone.now.all_day).order(:achievement).last(7)
 
 
     # friendグループ

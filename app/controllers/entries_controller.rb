@@ -4,7 +4,9 @@ class EntriesController < ApplicationController
   def create
     # 送信者のid、ページのグループidを取得し、加入申請として保存
     entry = Entry.new(entry_params)
-    entry.save!
+    entry.user_id = current_user.id
+    entry.group_id = params[:group_id]
+    entry.save
     flash[:notice] = "加入申請を送りました！"
     redirect_to request.referer
   end
@@ -23,8 +25,9 @@ class EntriesController < ApplicationController
   end
 
   private
+
   def entry_params
-    params.require(:entry).permit(:user_id, :group_id)
+    params.permit(:user_id, :group_id)
   end
 
 end

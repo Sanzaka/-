@@ -4,8 +4,6 @@
     <div class="data">
       <% if @today_my_target == 0 %>
         <%= form_with(model: [@group, @target], local: true) do |f| %>
-          <%= f.hidden_field :user_id, :value => current_user.id %>
-          <%= f.hidden_field :group_id, :value => @group.id %>
 
           <div class="area">
             <div>一日一回、記入してください！</div>
@@ -41,30 +39,30 @@
                 <%end%>
               </td>
               <td>
-                <% if target.achievement_by?(target) %>
-                  <% if target.user_id == current_user.id %>
-                    <!--リザルト投稿済み＆自分の投稿で、editリンクを表示-->
-                    <%= link_to target.result.achievement, edit_target_result_path(target, target.result.id) %>
-                  <%else%>
-                    <%= target.result.achievement %>
+                <!--リザルトが投稿されているか、未投稿ならそれは自分のtargetかの確認-->
+                <% if target.achievement_exists?(target, current_user.id) == "my_result" %>
+
+                  <!--リザルト投稿済み＆自分の投稿で、editリンクを表示-->
+                  <%= link_to target.result.achievement, edit_target_result_path(target, target.result.id) %>
+
+                <% elsif target.achievement_exists?(target, current_user.id) == "someones_result" %>
+                  <!--誰かのリザルトである場合、数値のみを表示-->
+                  <%= target.result.achievement %>
+
+                <% elsif target.achievement_exists?(target, current_user.id) == "my_target_yet_result" %>
+                  <!--リザルト未投稿、かつ自分のtargetである場合-->
+                  <%= form_with(model: [target, @result], local: true) do |f| %>
+                    <div class="area">
+                      <%= f.text_field :achievement, placeholder: "0~100" %>
+                    </div>
+                    <div class="field">
+                      <%= f.submit "登録" %>
+                    </div>
                   <%end%>
-                <%else%>
-                  <!--リザルト未投稿の場合-->
-                  <% if target.user_id == current_user.id %>
-                    <%= form_with(model: [target, @result], local: true) do |f| %>
-                      <%= f.hidden_field :target_id, :value => target.id %>
-                      <%= f.hidden_field :user_id, :value => current_user.id %>
-                      <%= f.hidden_field :group_id, :value => @group.id %>
-                      <div class="area">
-                        <%= f.text_field :achievement, placeholder: "0~100" %>
-                      </div>
-                      <div class="field">
-                        <%= f.submit "登録" %>
-                      </div>
-                    <%end%>
-                  <%else%>
-                    <div>未記入</div>
-                  <%end%>
+
+                <% elsif target.achievement_exists?(target, current_user.id) == "someones_target_yet_result" %>
+                  <!--リザルト未投稿、かつ誰かのtargetである場合-->
+                  <div>未記入</div>
                 <%end%>
               </td>
             </tr>
@@ -104,14 +102,14 @@
       <%= column_chart @results.pluck(:created_at, :achievement), class: "graph_size" %>
     </div>
 
-    <!--グループに自分が居て、かつ編集ステータスがない人に、退会ボタンを表示-->
+    <!--このグループで、自分の編集ステータスがない場合、退会ボタンを表示-->
     <div class="leave">
-      <% if @group.user_exists?(current_user, @group) && @my_group_status.operation_right == 0 %>
+      <% if @my_group_status.operation_right == 0 %>
         <%= link_to group_group_member_path(@group, current_user.id), method: :delete, data: {confirm: "このグループを退会します。本当によろしいですか？"}, class: "edit_link" do %>
           <button class="red_btn">グループ退会</button>
         <%end%>
       <%else%>
-        ＊退会不可能です
+        ＊グループ作成者は退会不可能です。「情報変更」から、グループ削除をご利用ください。
       <%end%>
     </div>
 
@@ -133,8 +131,6 @@
       <!--加入申請がすでに送られている場合は、加入申請を送れない-->
       <% unless @group.entry_exists?(current_user) %>
         <%= form_with(model:[@group, @entry], local: true) do |f| %>
-          <%= f.hidden_field :user_id, :value => current_user.id %>
-          <%= f.hidden_field :group_id, :value => @group.id %>
           <div class="action">
             <%= f.submit "加入", class: "big_btn" %>
             <div>＊加入申請を送信します！</div>
