@@ -8,6 +8,8 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
+    @contact.name = current_user.name
+    @contact.email = current_user.email
     if @contact.save
       ContactMailer.send_mail(@contact).deliver
       flash[:notice] = "お問合せありがとうございます！送信に成功しました！"

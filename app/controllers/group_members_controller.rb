@@ -5,17 +5,13 @@ class GroupMembersController < ApplicationController
     # 加入申請が承諾された場合の処理
     @group_member = GroupMember.new(group_member_params)
     @group_member.group_id = params[:group_id]
-    if @group_member.save!
+    @group_member.save
 
-      # 加入申請が残らないように破棄
-      entry = Entry.find_by(user_id: @group_member.user_id, group_id: params[:group_id])
-      entry.destroy
-      flash[:notice] = "メンバーを追加しました！"
-      redirect_to group_path(params[:group_id])
-    else
-      flash[:alert] = "メンバーの登録に失敗しました！"
-      redirect_to
-    end
+    # 加入申請が残らないように破棄
+    entry = Entry.find_by(user_id: @group_member.user_id, group_id: params[:group_id])
+    entry.destroy
+    flash[:notice] = "メンバーを追加しました！"
+    redirect_to group_path(params[:group_id])
 
   end
 

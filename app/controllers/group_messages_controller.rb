@@ -3,11 +3,13 @@ class GroupMessagesController < ApplicationController
 
   def create
     group_message = GroupMessage.new(group_message_params)
+    group_message.user_id = current_user.id
+    group_message.group_id = params[:group_id]
     if group_message.save
       flash[:notice] = "メッセージを投稿しました！"
       redirect_to request.referer
     else
-      flash[:notice] = "メッセージを入力してください！"
+      flash[:alert] = "メッセージを入力してください！"
       redirect_to request.referer
     end
   end

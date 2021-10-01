@@ -1,10 +1,9 @@
 <div class="friend">
   <h3>フレンドグループ</h3>
+  <!--閲覧者がこのグループのメンバーでない場合、グループ詳細を表示しない-->
   <%if @group.user_exists?(current_user, @group) %>
   <div class="comment">
     <%= form_with(model: [@group, @message], local: true) do |f| %>
-      <%= f.hidden_field :user_id, :value => current_user.id %>
-      <%= f.hidden_field :group_id, :value => @group.id %>
 
       <div class="area">
         <%= f.text_area :message, placeholder: "投稿内容を記入してください", class: "text_area"%>
@@ -49,16 +48,18 @@
 
       </div>
     <%end%>
-  </div>
-  <div class="leave">
-      <% if @group.user_exists?(current_user, @group) && @my_group_status.operation_right == 0 %>
+
+    <div class="leave">
+      <% if @my_group_status.operation_right == 0 %>
         <%= link_to group_group_member_path(@group, current_user.id), method: :delete, data: {confirm: "このグループを退会します。本当によろしいですか？"}, class: "edit_link" do %>
           <button class="red_btn">グループ退会</button>
         <%end%>
       <%else%>
-        ＊退会不可能です
+        ＊グループ作成者は退会不可能です。「情報変更」から、グループ削除をご利用ください。
       <%end%>
     </div>
+  </div>
+
 
 
   <%else%>
@@ -78,8 +79,6 @@
       <!--加入申請がすでに送られている場合は、加入申請を送れない-->
       <% unless @group.entry_exists?(current_user) %>
         <%= form_with(model:[@group, @entry], local: true) do |f| %>
-          <%= f.hidden_field :user_id, :value => current_user.id %>
-          <%= f.hidden_field :group_id, :value => @group.id %>
           <div class="action">
             <%= f.submit "加入", class: "big_btn" %>
             <div>＊加入申請を送信します！</div>

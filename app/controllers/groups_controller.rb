@@ -41,7 +41,7 @@ class GroupsController < ApplicationController
       @direct_join.user_id = current_user.id
       @direct_join.group_id = @group.id
       @direct_join.operation_right = 1
-      @direct_join.save!
+      @direct_join.save
       flash[:notice] = "グループを作成しました！"
       redirect_to group_path(@group.id)
     else
