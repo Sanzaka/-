@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
   root to: "homes#top", as: "root"
+  post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
+
 
   resources :users, only:[:show, :edit, :update]
-  get "search" => "searches#search", as: "search"
-
-  get "group/:id/data" => "groups#data", as: "group_data"
-  get "my_group" => "groups#my_group", as: "my_group"
+  get "search" => "searches#search"
+  get "my_group" => "groups#my_group"
   resources :groups do
     resources :group_members, only: [:create, :destroy, :index] do
       member do

@@ -5,6 +5,7 @@ class GroupMessagesController < ApplicationController
     group_message = GroupMessage.new(group_message_params)
     group_message.user_id = current_user.id
     group_message.group_id = params[:group_id]
+    group_message.score = Language.get_data(group_message_params[:message])
     if group_message.save
       flash[:notice] = "メッセージを投稿しました！"
       redirect_to request.referer

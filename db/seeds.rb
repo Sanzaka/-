@@ -6,11 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# ゲストログインで用いるユーザー
-guestuser = User.new(:name => "ゲストユーザー", :email => "hogehoge@hoge.com", :password => "hugahuga", :is_email_receive => false)
-guestuser.save!
-
-# そのほか初期生成のユーザー
+# 初期生成のユーザー
 5.times do |i|
   if i == 0
     user = User.new(:name => "高橋祐樹", :email => "hogehoge#{i}@hoge.com", :password => "hugahuga#{i}", :is_email_receive => false)
@@ -80,20 +76,24 @@ end
 GroupMessage.create!(
   user_id: 2,
   group_id: 2,
-  message: "今日は初仕事です！"
+  message: "今日は初仕事です！",
+  score: Language.get_data("今日は初仕事です！")
 )
 GroupMessage.create!(
   user_id: 3,
   group_id: 2,
-  message: "今日は失敗してしまった。。。！"
+  message: "今日は失敗してしまった。。。！",
+  score: Language.get_data("今日は失敗してしまった。。。！")
 )
 GroupMessage.create!(
   user_id: 4,
   group_id: 2,
-  message: "失敗する日もあります！頑張りましょう！！"
+  message: "失敗する日もあります！頑張りましょう！！",
+  score: Language.get_data("失敗する日もあります！頑張りましょう！！")
 )
 GroupMessage.create!(
   user_id: 5,
   group_id: 2,
-  message: "今日から大きなプロジェクトが始まる。。。気合い入れて頑張ります"
+  message: "今日から大きなプロジェクトが始まる。。。気合い入れて頑張ります",
+  score: Language.get_data("今日から大きなプロジェクトが始まる。。。気合い入れて頑張ります")
 )

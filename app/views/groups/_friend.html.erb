@@ -26,9 +26,20 @@
           </div>
         </div>
 
-        <div class="text">
-          <%= msg.message %>
-        </div>
+        <!--google感情分析API、スコアによって背景色が変わる-->
+        <% if msg.score >= 0.2 %>
+          <div class="happy_text">
+            <%= msg.message %>
+          </div>
+        <% elsif msg.score <= -0.4 %>
+          <div class="sad_text">
+            <%= msg.message %>
+          </div>
+        <%else%>
+          <div class="text">
+            <%= msg.message %>
+          </div>
+        <%end%>
 
         <div class="reaction">
           <div class="time"><%= l msg.created_at, format: :short %></div>
