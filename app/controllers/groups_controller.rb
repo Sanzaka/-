@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_current_user, only:[:edit]
+  before_action :ensure_current_user, only:[:edit, :update]
 
   # indexで、グループの操作権限がない場合の処理(operation_right = 0の場合)
   def ensure_current_user
