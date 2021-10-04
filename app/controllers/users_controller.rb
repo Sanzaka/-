@@ -1,5 +1,14 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_current_user, only:[:edit, :update]
+
+  # current_userが関連しないページへのアクセスを制限する処理
+  def ensure_current_user
+    if current_user.id != params[:id].to_i
+      flash[:alert] = "閲覧権限がありません！"
+      redirect_to user_path(current_user)
+    end
+  end
 
   def edit
     @user = User.find(current_user.id)

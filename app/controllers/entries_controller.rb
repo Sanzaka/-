@@ -1,5 +1,15 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_current_user, only:[:index]
+
+  # indexで、グループの操作権限がない場合の処理(operation_right = 0の場合)
+  def ensure_current_user
+    unless GroupMember.find_by(user_id: current_user.id, group_id: params[:group_id], operation_right: 1).present?
+      flash[:alert] = "閲覧権限がありません！"
+      redirect_to user_path(current_user)
+    end
+  end
+
 
   def create
     # 送信者のid、ページのグループidを取得し、加入申請として保存
