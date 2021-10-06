@@ -13,6 +13,19 @@
     <%= link_to edit_user_path, class: "edit_link" do %>
       <button class="green_btn">情報変更</button>
     <%end%>
+
+    <%= form_with url: user_all_create_path(@user), model: [@user, @target], local: true do |f| %>
+
+      <div class="area">
+        <div>一日一回、記入してください！</div>
+        <%= f.text_area :target_content, placeholder: "今日の目標を一言！", class: "text_area"%>
+      </div>
+
+      <div class="field">
+        <%= f.submit "今日の目標登録", class: "big_btn" %>
+      </div>
+    <%end%>
+
   </div>
   <div class="main">
     <h3>メニュー</h3>

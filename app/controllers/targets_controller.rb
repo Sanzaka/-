@@ -37,6 +37,19 @@ class TargetsController < ApplicationController
     redirect_to group_path(params[:group_id])
   end
 
+  def all_create
+    user = current_user
+    my_groups = user.group_members.all
+    # 自分が所属するすべてのグループに投稿するための繰り返し処理
+    my_groups.each do |my_group|
+      target = Target.new(target_params)
+      target.user_id = user.id
+      target.group_id = my_group.group_id
+      target.save
+    end
+    flash[:notice] = "今日の目標を投稿しました！"
+    redirect_to request.referer
+  end
 
   private
 

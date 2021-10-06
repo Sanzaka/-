@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
 
 
-  resources :users, only:[:show, :edit, :update]
+
+  resources :users, only:[:show, :edit, :update] do
+    post "all_create" => "targets#all_create"
+  end
   get "search" => "searches#search"
   get "my_group" => "groups#my_group"
   resources :groups do
