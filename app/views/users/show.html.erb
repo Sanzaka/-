@@ -17,7 +17,7 @@
     <%= form_with url: user_all_create_path(@user), model: [@user, @target], local: true do |f| %>
 
       <div class="area">
-        <div>一日一回、記入してください！</div>
+        <div>すべてのグループに投稿！</div>
         <%= f.text_area :target_content, placeholder: "今日の目標を一言！", class: "text_area"%>
       </div>
 

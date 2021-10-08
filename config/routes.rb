@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   end
   get "search" => "searches#search"
   get "my_group" => "groups#my_group"
+  get "quick_form" => "users#quick_form"
+  
   resources :groups do
     resources :group_members, only: [:create, :destroy, :index] do
       member do
