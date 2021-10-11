@@ -10,63 +10,66 @@
 
     <tbody>
       <% @my_group.each do |group| %>
-      <tr>
-        <td>
-          <% if group.group_type == "work_group" %>
-            <%= attachment_image_tag group, :image, format: "jpeg", size: "75x75", class: "image", fallback: "work.png" %>
-          <% elsif group.group_type == "friend_group" %>
-            <%= attachment_image_tag group, :image, format: "jpeg", size: "75x75", class: "image", fallback: "friend.png" %>
-          <%end%>
-          <br><%= group.name %>
-        </td>
-
-        <td>
-          <!--今日のtargetの投稿がなければ、入力フォームを表示-->
-          <% if group.today_my_target_exists? %>
-            <%= group.today_my_target %>
-          <%else%>
-            <%= form_with url: user_all_create_path(@user), model: [@user, @target], local: true do |f| %>
-              <div class="area">
-                <%= f.text_area :target_content, placeholder: "今日の目標を一言！", class: "text_area"%>
-              </div>
-
-              <div class="field">
-                <%= f.submit "今日の目標登録", class: "big_btn" %>
-              </div>
+        <tr>
+          <td>
+            <% if group.group_type == "work_group" %>
+              <%= attachment_image_tag group, :image, format: "jpeg", size: "75x75", class: "image", fallback: "work.png" %>
+            <% elsif group.group_type == "friend_group" %>
+              <%= attachment_image_tag group, :image, format: "jpeg", size: "75x75", class: "image", fallback: "friend.png" %>
             <%end%>
-          <%end%>
-        </td>
+            <br><%= group.name %>
+          </td>
 
-        <td>
-          <% if group.today_my_result.exists? %>
-            <!--今日のresult投稿済みの場合-->
-            <% group.today_my_result %>
-          <% elsif group.today_my_target_exists? %>
-            <!--今日のtarget投稿済み、result未投稿の場合-->
-            <%= form_with(model:[@target, @result], local: true) do |f| %>
+          <td>
+            <!--今日のtargetの投稿がなければ、入力フォームを表示-->
+            <% if group.today_my_target_exists?(current_user.id) %>
+              <%= group.today_my_target(current_user.id) %>
+            <%else%>
+              <%= form_with(model: [group, @new_target], local: true) do |f| %>
+                <div class="area">
+                  <%= f.text_area :target_content, placeholder: "今日の目標を一言！", class: "text_area"%>
+                </div>
 
-              <div class="field">
-                <%= f.label :achievement, "達成割合（数字のみ）" %>
-                <%= f.text_field :achievement, autofocus: true, placeholder: "0~100" %>
-              </div>
-
-
-              <div class="field">
-                <%= f.label :result_memo, "取組結果のメモ（任意）" %>
-                <%= f.text_area :result_memo, class: "text_area" %>
-              </div>
-
-              <div class="action">
-                <%= f.submit "目標変更", class: "big_btn" %>
-              </div>
-
+                <div class="field">
+                  <%= f.submit "今日の目標登録", class: "big_btn" %>
+                </div>
+              <%end%>
             <%end%>
-          <%else%>
-            <!--今日のtarget未投稿、result未投稿の場合-->
-            <div>今日の目標を投稿していません！</div>
-          <%end%>
-        </td>
-      </tr>
+          </td>
+
+          <td>
+            <% if group.today_my_result_exists?(current_user.id) %>
+              <!--今日のresult投稿済みの場合-->
+              <% group.today_my_result %>
+            <% elsif group.today_my_target_exists?(current_user.id) %>
+              <!--今日のtarget投稿済み、result未投稿の場合-->
+              <% add_instance(group) do %>
+                <%= form_with(model: [@target, @result], local: true) do |f| %>
+
+                  <div class="field">
+                    <%= f.label :achievement, "達成割合（数字のみ）" %>
+                    <%= f.text_field :achievement, autofocus: true, placeholder: "0~100" %>
+                  </div>
+
+
+                  <div class="field">
+                    <%= f.label :result_memo, "取組結果のメモ（任意）" %>
+                    <%= f.text_area :result_memo, class: "text_area" %>
+                  </div>
+
+                  <div class="action">
+                    <%= f.submit "目標変更", class: "big_btn" %>
+                  </div>
+
+                <%end%>
+              <%end%>
+            <%else%>
+              <!--今日のtarget未投稿、result未投稿の場合-->
+              <div>今日の目標を投稿していません！</div>
+            <%end%>
+          </td>
+        </tr>
+      <%end%>
     </tbody>
   </table>
 </div>

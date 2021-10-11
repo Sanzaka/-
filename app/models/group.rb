@@ -27,4 +27,17 @@ class Group < ApplicationRecord
     self.entries.find_by(group_id: self.id, user_id: user.id)
   end
 
+
+  # users/quick_formにて使用
+  def today_my_target_exists?(user)
+    self.targets.find_by(user_id: user, created_at: Time.zone.now.all_day).present?
+  end
+
+  def today_my_target(user)
+    self.targets.find_by(user_id: user, created_at: Time.zone.now.all_day)
+  end
+
+  def today_my_result_exists?(user)
+    self.results.find_by(user_id: user, created_at: Time.zone.now.all_day).present?
+  end
 end

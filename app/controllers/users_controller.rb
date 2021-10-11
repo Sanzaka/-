@@ -31,6 +31,19 @@ class UsersController < ApplicationController
     @group_ranks = Group.find(GroupMember.group(:group_id).order("count(group_id) desc").limit(3).pluck(:group_id))
   end
 
+  def quick_form
+    @my_group = current_user.groups
+    @new_target = Target.new
+    @result = Result.new
+  end
+
+  def add_instance(group)
+    @target = Target.find_by(user_id: current_user.id, group_id: group.id, created_at: Time.zone.now.all_day)
+  end
+
+
+  helper_method :add_instance
+
   private
 
   def user_params
