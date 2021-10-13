@@ -40,10 +40,10 @@
           <td>
             <% if group.today_my_result_exists?(current_user.id) %>
               <!--今日のresult投稿済みの場合-->
-              <% group.today_my_result %>
+              <%= group.today_my_result(current_user.id).achievement %>
             <% elsif group.today_my_target_exists?(current_user.id) %>
               <!--今日のtarget投稿済み、result未投稿の場合-->
-              <%= form_with(model: [@target, @result], local: true) do |f| %>
+              <%= form_with(model: [group, @result], local: true) do |f| %>
 
                 <div class="field">
                   <%= f.label :achievement, "達成割合（数字のみ）" %>

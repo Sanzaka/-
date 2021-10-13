@@ -32,10 +32,9 @@ class UsersController < ApplicationController
   end
 
   def quick_form
-    @my_group = current_user.groups
+    @my_group = current_user.groups.where(group_type: "work_group")
     @new_target = Target.new
     @result = Result.new
-    @target = Target.find_by(user_id: current_user.id, created_at: Time.zone.now.all_day)
   end
 
   private

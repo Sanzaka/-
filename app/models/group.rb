@@ -40,4 +40,9 @@ class Group < ApplicationRecord
   def today_my_result_exists?(user)
     self.results.find_by(user_id: user, created_at: Time.zone.now.all_day).present?
   end
+
+  def today_my_result(user)
+    self.results.find_by(user_id: user, created_at: Time.zone.now.all_day)
+  end
+
 end

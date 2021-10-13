@@ -43,7 +43,7 @@
                 <% if target.achievement_exists?(target, current_user.id) == "my_result" %>
 
                   <!--リザルト投稿済み＆自分の投稿で、editリンクを表示-->
-                  <%= link_to target.result.achievement, edit_target_result_path(target, target.result.id) %>
+                  <%= link_to target.result.achievement, edit_group_result_path(@group, target.result.id) %>
 
                 <% elsif target.achievement_exists?(target, current_user.id) == "someones_result" %>
                   <!--誰かのリザルトである場合、数値のみを表示-->
@@ -51,7 +51,7 @@
 
                 <% elsif target.achievement_exists?(target, current_user.id) == "my_target_yet_result" %>
                   <!--リザルト未投稿、かつ自分のtargetである場合-->
-                  <%= form_with(model: [target, @result], local: true) do |f| %>
+                  <%= form_with(model: [@group, @result], local: true) do |f| %>
                     <div class="area">
                       <%= f.text_field :achievement, placeholder: "0~100" %>
                     </div>
