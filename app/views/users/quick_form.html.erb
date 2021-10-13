@@ -23,7 +23,7 @@
           <td>
             <!--今日のtargetの投稿がなければ、入力フォームを表示-->
             <% if group.today_my_target_exists?(current_user.id) %>
-              <%= group.today_my_target(current_user.id) %>
+              <%= group.today_my_target(current_user.id).target_content %>
             <%else%>
               <%= form_with(model: [group, @new_target], local: true) do |f| %>
                 <div class="area">
@@ -43,25 +43,23 @@
               <% group.today_my_result %>
             <% elsif group.today_my_target_exists?(current_user.id) %>
               <!--今日のtarget投稿済み、result未投稿の場合-->
-              <% add_instance(group) do %>
-                <%= form_with(model: [@target, @result], local: true) do |f| %>
+              <%= form_with(model: [@target, @result], local: true) do |f| %>
 
-                  <div class="field">
-                    <%= f.label :achievement, "達成割合（数字のみ）" %>
-                    <%= f.text_field :achievement, autofocus: true, placeholder: "0~100" %>
-                  </div>
+                <div class="field">
+                  <%= f.label :achievement, "達成割合（数字のみ）" %>
+                  <%= f.text_field :achievement, autofocus: true, placeholder: "0~100" %>
+                </div>
 
 
-                  <div class="field">
-                    <%= f.label :result_memo, "取組結果のメモ（任意）" %>
-                    <%= f.text_area :result_memo, class: "text_area" %>
-                  </div>
+                <div class="field">
+                  <%= f.label :result_memo, "取組結果のメモ（任意）" %>
+                  <%= f.text_area :result_memo, class: "text_area" %>
+                </div>
 
-                  <div class="action">
-                    <%= f.submit "目標変更", class: "big_btn" %>
-                  </div>
+                <div class="action">
+                  <%= f.submit "目標変更", class: "big_btn" %>
+                </div>
 
-                <%end%>
               <%end%>
             <%else%>
               <!--今日のtarget未投稿、result未投稿の場合-->

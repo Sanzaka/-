@@ -35,14 +35,8 @@ class UsersController < ApplicationController
     @my_group = current_user.groups
     @new_target = Target.new
     @result = Result.new
+    @target = Target.find_by(user_id: current_user.id, created_at: Time.zone.now.all_day)
   end
-
-  def add_instance(group)
-    @target = Target.find_by(user_id: current_user.id, group_id: group.id, created_at: Time.zone.now.all_day)
-  end
-
-
-  helper_method :add_instance
 
   private
 
