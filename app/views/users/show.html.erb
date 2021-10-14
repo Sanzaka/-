@@ -17,7 +17,7 @@
     <%= form_with url: user_all_create_path(@user), model: [@user, @target], local: true do |f| %>
 
       <div class="area">
-        <div>すべてのグループに投稿！</div>
+        <div>今日の目標を<br>すべてのグループに投稿！</div>
         <%= f.text_area :target_content, placeholder: "今日の目標を一言！", class: "text_area"%>
       </div>
 
@@ -25,7 +25,7 @@
         <%= f.submit "今日の目標登録", class: "big_btn" %>
       </div>
     <%end%>
-    <%= link_to "すべてのワークグループ", quick_form_path %>
+    <%= link_to "所属するワークグループ", quick_form_path %>
   </div>
   <div class="main">
     <h3>メニュー</h3>

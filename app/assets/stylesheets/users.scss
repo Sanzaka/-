@@ -50,3 +50,52 @@ $space: 30px;
     }
   }
 }
+
+// quick_form
+.quick_form{
+  h3{
+    text-align: center;
+    padding-bottom: $space;
+  }
+  
+  .borderless_table{
+    table-layout: fixed;
+    width: 800px;
+    margin: 0 auto;
+    border: 10px outset #CCFFCC;
+    background-color: white;
+    text-align: center;
+    thead{
+
+      tr{
+        .th1{
+          padding: 5px;
+          width: 150px;
+        }
+        .th2{
+          padding: 5px;
+          width: 250px;
+        }
+        .th3{
+          padding: 5px;
+          width: 150px;
+        }
+      }
+    }
+    tbody{
+      tr{
+
+        .td1{
+          text-align: center;
+        }
+        .td2{
+          text-align: center;
+        }
+        .td3{
+          text-align: center;
+        }
+      }
+    }
+  }
+
+}

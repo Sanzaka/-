@@ -1,6 +1,6 @@
 <div class="quick_form">
-  <div>ワークグループ</div>
-  <table>
+  <h3>ワークグループ<br>クイック投稿フォーム</h3>
+  <table class="borderless_table">
 
     <thead>
       <tr>
@@ -12,12 +12,14 @@
       <% @my_group.each do |group| %>
         <tr>
           <td>
-            <% if group.group_type == "work_group" %>
-              <%= attachment_image_tag group, :image, format: "jpeg", size: "75x75", class: "image", fallback: "work.png" %>
-            <% elsif group.group_type == "friend_group" %>
-              <%= attachment_image_tag group, :image, format: "jpeg", size: "75x75", class: "image", fallback: "friend.png" %>
+            <%= link_to group_path(group.id) do %>
+              <% if group.group_type == "work_group" %>
+                <%= attachment_image_tag group, :image, format: "jpeg", size: "75x75", class: "image", fallback: "work.png" %>
+              <% elsif group.group_type == "friend_group" %>
+                <%= attachment_image_tag group, :image, format: "jpeg", size: "75x75", class: "image", fallback: "friend.png" %>
+              <%end%>
+              <br><%= group.name %>
             <%end%>
-            <br><%= group.name %>
           </td>
 
           <td>
