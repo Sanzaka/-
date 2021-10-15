@@ -99,7 +99,11 @@
 
     <div class="graph">
       <h3>今日の達成度比較</h3>
-      <%= column_chart @results.pluck(:created_at, :achievement), class: "graph_size" %>
+      <% if false %>
+        <%= column_chart @results.pluck(:created_at, :achievement), class: "graph_size" %>
+      <%end%>
+      <canvas id="myChart" width="200" height="100"></canvas>
+      <script>draw_graph();</script>
     </div>
 
     <!--このグループで、自分の編集ステータスがない場合、退会ボタンを表示-->

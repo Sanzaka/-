@@ -27,9 +27,24 @@ class GroupsController < ApplicationController
     @today_targets = @group.targets.where(created_at: Time.zone.now.all_day)
     @today_my_target = @today_targets.where(user_id: current_user.id).count
 
-    # グラフ部分
-    @results = @group.results.where(created_at: Time.zone.now.all_day).order(:achievement).last(7)
-
+    # グラフ部分(chart.js)
+    graph_datas = @group.results.where(created_at: Time.zone.now.all_day).order(:achievement).last(7)
+    # graph_datasの順で、下のラベルに名前を入力させるための処理
+    graph_labels = []
+    graph_datas.each do |g|
+      user = User.find(g.user_id)
+      graph_labels << user.name
+    end
+    # graph_labelsが6個以下の場合、配列の合計数が7個になるように処理
+    empties = 7 - graph_labels.size
+    if empties > 0
+      empties.times do
+        graph_labels << "nodata"
+      end
+    end
+    # groups.coffeeに受け渡す部分
+    gon.datas = graph_datas.pluck(:achievement)
+    gon.labels = graph_labels
 
     # friendグループ
     @message = GroupMessage.new

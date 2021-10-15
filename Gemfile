@@ -70,7 +70,11 @@ gem "rails-i18n"
 gem "devise-i18n"
 gem "jquery-rails"
 gem "whenever", require: false
-gem 'listen', '>= 3.0.5', '< 3.2'
+gem "listen", ">= 3.0.5", "< 3.2"
+gem "chart-js-rails", "~> 0.1.4"
+gem "gon", "~> 6.2.0"
+
+
 
 
 gem 'dotenv-rails'

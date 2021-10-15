@@ -13,11 +13,11 @@
 //= require jquery
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 
 //= require chartkick
 //= require Chart.bundle
+//= require Chart.min
 
 //notice, alertは５秒表示
 $(function(){
