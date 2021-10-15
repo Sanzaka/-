@@ -9,7 +9,7 @@
     </thead>
 
     <tbody>
-      <% @my_group.each do |group| %>
+      <% @my_groups.each do |group| %>
         <tr>
           <td>
             <%= link_to group_path(group.id) do %>
@@ -72,4 +72,5 @@
       <%end%>
     </tbody>
   </table>
+  <div class="paginate"><%= paginate @my_groups %></div>
 </div>

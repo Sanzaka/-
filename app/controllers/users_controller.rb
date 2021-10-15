@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def quick_form
-    @my_group = current_user.groups.where(group_type: "work_group")
+    @my_groups = current_user.groups.where(group_type: "work_group").page(params[:page]).per(10)
     @new_target = Target.new
     @result = Result.new
   end

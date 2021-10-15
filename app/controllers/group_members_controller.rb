@@ -29,7 +29,7 @@ class GroupMembersController < ApplicationController
   end
 
   def index
-    @group_members = GroupMember.where(group_id: params[:group_id])
+    @group_members = GroupMember.where(group_id: params[:group_id]).page(params[:page]).per(5)
   end
 
   def direct

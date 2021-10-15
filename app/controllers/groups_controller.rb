@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
   end
 
   def index
-    @groups = Group.all
+    @groups = Group.all.page(params[:page]).per(10)
   end
 
   def show
@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
     # workグループ
     @target = Target.new
     @result = Result.new
-    @today_targets = @group.targets.where(created_at: Time.zone.now.all_day)
+    @today_targets = @group.targets.where(created_at: Time.zone.now.all_day).page(params[:page]).per(10)
     @today_my_target = @today_targets.where(user_id: current_user.id).count
 
     # グラフ部分(chart.js)
@@ -39,7 +39,7 @@ class GroupsController < ApplicationController
     empties = 7 - graph_labels.size
     if empties > 0
       empties.times do
-        graph_labels << "nodata"
+        graph_labels << "no_data"
       end
     end
     # groups.coffeeに受け渡す部分
@@ -48,7 +48,7 @@ class GroupsController < ApplicationController
 
     # friendグループ
     @message = GroupMessage.new
-    @messages = GroupMessage.where(group_id: @group.id).order(id: "desc")
+    @messages = GroupMessage.where(group_id: @group.id).order(id: "desc").page(params[:page]).per(15)
     @stamp = Stamp.new
   end
 
@@ -96,7 +96,7 @@ class GroupsController < ApplicationController
   end
 
   def my_group
-    @my_groups = current_user.groups
+    @my_groups = current_user.groups.page(params[:page]).per(10)
   end
 
 
