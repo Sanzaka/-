@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+        sessions: 'users/sessions'
+      }
   root to: "homes#top", as: "root"
-  post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
+  post '/homes/guest_sign_in' => 'homes#guest_sign_in'
+  patch "/users/:id/secession" => "users#secession", as: "secession"
 
 
 

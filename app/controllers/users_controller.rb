@@ -37,9 +37,18 @@ class UsersController < ApplicationController
     @result = Result.new
   end
 
+  # 退会処理
+  def secession
+    user = User.find(params[:id])
+    user.update(is_deleted: true)
+    reset_session
+    flash[:notice] = "退会処理が完了しました。ご利用ありがとうございました！"
+    redirect_to root_path
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :intro, :image, :is_email_receive)
+    params.require(:user).permit(:name, :email, :intro, :image)
   end
 end

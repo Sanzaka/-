@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_04_011924) do
+ActiveRecord::Schema.define(version: 2021_10_15_053252) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
@@ -89,7 +89,6 @@ ActiveRecord::Schema.define(version: 2021_10_04_011924) do
     t.datetime "remember_created_at"
     t.string "name", null: false
     t.string "intro"
-    t.boolean "is_email_receive", null: false
     t.boolean "is_deleted", default: false, null: false
     t.string "image_id"
     t.datetime "created_at", null: false

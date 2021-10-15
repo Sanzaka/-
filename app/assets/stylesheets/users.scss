@@ -47,6 +47,12 @@ $space: 30px;
           }
         }
       }
+      .group_button{
+        width: 300px;
+        margin: $space auto;
+        display: flex;
+        justify-content: space-around;
+      }
     }
   }
 }
@@ -57,7 +63,7 @@ $space: 30px;
     text-align: center;
     padding-bottom: $space;
   }
-  
+
   .borderless_table{
     table-layout: fixed;
     width: 800px;

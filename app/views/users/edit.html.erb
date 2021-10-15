@@ -1,6 +1,5 @@
-<h3>ユーザー情報変更</h3>
 <div class="text_form">
-
+  <h3>ユーザー情報変更</h3>
   <%= form_with model: @user, local: true do |f| %>
 
     <%= render 'layouts/error_messages', object: f.object %>
@@ -20,18 +19,14 @@
       <%= f.attachment_field :image %>
     </div>
 
-    <div class="field">
-      <%= f.label :is_email_receive, "メールを受け取る", value: true %>
-      <%= f.radio_button :is_email_receive, :true, checked: true %><br>
-
-      <%= f.label :is_email_receive, "メールを受け取らない", value: false %>
-      <%= f.radio_button :is_email_receive, :false %>
-    </div>
-
     <div class="action">
       <%= f.submit "ユーザー変更", class: "big_btn" %>
     </div>
 
+  <%end%>
+
+  <%= link_to secession_path(@user.id), method: :patch, data: {confirm: "退会した場合、このアカウントは二度と使えなくなります。本当によろしいですか？"}, class: "edit_link" do %>
+    <button class="red_btn">退会</button>
   <%end%>
 
 </div>

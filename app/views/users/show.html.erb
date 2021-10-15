@@ -11,7 +11,7 @@
       <%= @user.intro %>
     </div>
     <%= link_to edit_user_path, class: "edit_link" do %>
-      <button class="green_btn">情報変更</button>
+      <div class="green_btn">情報変更</div>
     <%end%>
 
     <%= form_with url: user_all_create_path(@user), model: [@user, @target], local: true do |f| %>
@@ -63,12 +63,12 @@
         <%end%>
       </div>
 
-      <div>
+      <div class="group_button">
         <%= link_to groups_path, class: "edit_link" do %>
-          <button class="green_btn">グループ一覧</button>
+          <div class="green_btn">グループ一覧</div>
         <%end%>
         <%= link_to new_group_path, class: "edit_link" do %>
-          <button class="green_btn">グループ作成</button>
+          <div class="green_btn">グループ作成</div>
         <%end%>
       </div>
 

@@ -9,19 +9,19 @@
 # 初期生成のユーザー
 5.times do |i|
   if i == 0
-    user = User.new(:name => "高橋祐樹", :email => "hogehoge#{i}@hoge.com", :password => "hugahuga#{i}", :is_email_receive => false)
+    user = User.new(:name => "高橋祐樹", :email => "lakiewju45#{i}@hoge.com", :password => "hugahuga#{i}")
     user.save!
   elsif i == 1
-    user = User.new(:name => "すまいと", :email => "hogehoge#{i}@hoge.com", :password => "hugahuga#{i}", :is_email_receive => false)
+    user = User.new(:name => "すまいと", :email => "lawkiju45r#{i}@hoge.com", :password => "hugahuga#{i}")
     user.save!
   elsif i == 2
-    user = User.new(:name => "ゆーだい", :email => "hogehoge#{i}@hoge.com", :password => "hugahuga#{i}", :is_email_receive => false)
+    user = User.new(:name => "ゆーだい", :email => "a098w7suert3#{i}@hoge.com", :password => "hugahuga#{i}")
     user.save!
   elsif i == 3
-    user = User.new(:name => "綺羅星", :email => "hogehoge#{i}@hoge.com", :password => "hugahuga#{i}", :is_email_receive => false)
+    user = User.new(:name => "綺羅星", :email => "aoi8pw74utr#{i}@hoge.com", :password => "hugahuga#{i}")
     user.save!
   elsif i == 4
-    user = User.new(:name => "sanaka", :email => "hogehoge#{i}@hoge.com", :password => "hugahuga#{i}", :is_email_receive => false)
+    user = User.new(:name => "sanaka", :email => "09uaw34ut#{i}@hoge.com", :password => "hugahuga#{i}")
     user.save!
   end
 end

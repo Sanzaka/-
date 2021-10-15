@@ -31,14 +31,6 @@
       <%= f.attachment_field :image %>
     </div>
 
-    <div class="field">
-      <%= f.label :is_email_receive, "メールを受け取る", value: true %>
-      <%= f.radio_button :is_email_receive, :true, checked: true %><br>
-
-      <%= f.label :is_email_receive, "メールを受け取らない", value: false %>
-      <%= f.radio_button :is_email_receive, :false %>
-    </div>
-
     <div class="actions">
       <%= f.submit "ユーザー登録", class: "big_btn" %>
     </div>

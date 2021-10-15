@@ -27,6 +27,7 @@ window.draw_graph = ->
       scales: {
         yAxes: [{
           ticks: {
+            suggestedMax: 100,
             beginAtZero:true
           }
         }]

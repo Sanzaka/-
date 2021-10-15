@@ -24,4 +24,9 @@ class User < ApplicationRecord
   def self.looks(word)
     @user = User.where("name LIKE?","%#{word}%")
   end
+
+  # 退会ユーザー利用不可処理で用いる
+  def active_for_authentication?
+    super && (is_deleted == false)
+  end
 end
