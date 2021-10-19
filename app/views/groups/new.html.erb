@@ -6,34 +6,34 @@
 
     <div class="field">
       <%= f.label :name, "グループ名" %>
-      <%= f.text_field :name, autofocus: true %>
+      <%= f.text_field :name, autofocus: true, id: "session_name" %>
     </div>
 
     <div class="field">
       <%= f.label :intro, "グループ紹介" %>
-      <%= f.text_area :intro %>
+      <%= f.text_area :intro, id: "session_intro" %>
     </div>
 
     <div class="field">
       <%= f.label :image, "グループ画像（任意）" %>
-      <%= f.attachment_field :image %>
+      <%= f.attachment_field :image, id: "session_image" %>
     </div>
 
     <div class="field">
       <%= f.label :group_type, "ワークグループ", value: "work_group" %>
-      <%= f.radio_button :group_type, "work_group", checked: true %><br>
+      <%= f.radio_button :group_type, "work_group", checked: true, id: "session_work_group" %><br>
 
       <%= f.label :group_type, "フレンドグループ", value: "friend_group" %>
-      <%= f.radio_button :group_type, "friend_group" %>
+      <%= f.radio_button :group_type, "friend_group", id: "session_friend_group" %>
     </div>
 
     <div><strong>グループ加入の際</strong></div><br>
     <div class="field">
       <%= f.label :direct_join, "申請が必要", value: "false" %>
-      <%= f.radio_button :direct_join, "false", checked: true %><br>
+      <%= f.radio_button :direct_join, "false", checked: true, id: "session_direct_false" %><br>
 
       <%= f.label :direct_join, "申請は不要", value: "true" %>
-      <%= f.radio_button :direct_join, "true" %>
+      <%= f.radio_button :direct_join, "true", id: "session_direct_true" %>
     </div>
 
     <div class="action">

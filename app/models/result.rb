@@ -4,6 +4,7 @@ class Result < ApplicationRecord
   validates :group_id, presence: true
   validates :target_id, presence: true
   validates :achievement, numericality: {less_than_or_equal_to: 100}
+  validates :result_memo, length: {maximum: 50}
 
 
   belongs_to :target
