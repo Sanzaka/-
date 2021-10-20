@@ -3,6 +3,6 @@ FactoryBot.define do
     name {"テストグループ"}
     intro {"テストグループです"}
     group_type {"work_group"}
-    direct_join {"true"}
+    direct_join {"false"}
   end
 end

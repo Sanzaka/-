@@ -53,7 +53,7 @@
                   <!--リザルト未投稿、かつ自分のtargetである場合-->
                   <%= form_with(model: [@group, @result], local: true) do |f| %>
                     <div class="area">
-                      <%= f.text_field :achievement, placeholder: "0~100" %>
+                      <%= f.text_field :achievement, placeholder: "0~100", id: "session_result" %>
                     </div>
                     <div class="field">
                       <%= f.submit "登録" %>
