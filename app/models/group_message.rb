@@ -8,6 +8,10 @@ class GroupMessage < ApplicationRecord
   belongs_to :group
   has_many :stamps, dependent: :destroy
 
+  def stamp_exists?(user, message)
+    Stamp.where(user_id: user, group_message_id: message).present?
+  end
+
   def stamp1_exists?(user, message)
     Stamp.where(user_id: user, group_message_id: message, choose_stamp: 1).present?
   end

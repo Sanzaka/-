@@ -1,8 +1,12 @@
 <div class="stamp">
   <div>
-    <% if msg.stamp1_exists?(current_user.id, msg.id) %>
-      <%= link_to group_stamp_path(@group.id, msg.id, choose_stamp: 1, message_id: msg.id), method: :delete, remote: true do %>
-        <div class="true_stamp_1"></div><%= msg.stamp_count1.count %>
+    <% if msg.stamp_exists?(current_user.id, msg.id) %>
+      <% if msg.stamp1_exists?(current_user.id, msg.id) %>
+        <%= link_to group_stamp_path(@group.id, msg.id, choose_stamp: 1, message_id: msg.id), method: :delete, remote: true do %>
+          <div class="true_stamp_1"></div><%= msg.stamp_count1.count %>
+        <%end%>
+      <% else %>
+        <div class="stamp_1"></div><%= msg.stamp_count1.count %>
       <%end%>
     <%else%>
       <%= form_with(model: [@group, @stamp]) do |f| %>
@@ -14,9 +18,13 @@
   </div>
 
   <div>
-    <% if msg.stamp2_exists?(current_user.id, msg.id) %>
-      <%= link_to group_stamp_path(@group.id, msg.id, choose_stamp: 2, message_id: msg.id), method: :delete, remote: true do %>
-        <div class="true_stamp_2"></div><%= msg.stamp_count2.count %>
+    <% if msg.stamp_exists?(current_user.id, msg.id) %>
+      <% if msg.stamp2_exists?(current_user.id, msg.id) %>
+        <%= link_to group_stamp_path(@group.id, msg.id, choose_stamp: 2, message_id: msg.id), method: :delete, remote: true do %>
+          <div class="true_stamp_2"></div><%= msg.stamp_count2.count %>
+        <%end%>
+      <% else %>
+        <div class="stamp_2"></div><%= msg.stamp_count2.count %>
       <%end%>
     <%else%>
       <%= form_with(model: [@group, @stamp]) do |f| %>
@@ -28,9 +36,13 @@
   </div>
 
   <div>
-    <% if msg.stamp3_exists?(current_user.id, msg.id) %>
-      <%= link_to group_stamp_path(@group.id, msg.id, choose_stamp: 3, message_id: msg.id), method: :delete, remote: true do %>
-        <div class="true_stamp_3"></div><%= msg.stamp_count3.count %>
+    <% if msg.stamp_exists?(current_user.id, msg.id) %>
+      <% if msg.stamp3_exists?(current_user.id, msg.id) %>
+        <%= link_to group_stamp_path(@group.id, msg.id, choose_stamp: 3, message_id: msg.id), method: :delete, remote: true do %>
+          <div class="true_stamp_3"></div><%= msg.stamp_count3.count %>
+        <%end%>
+      <% else %>
+        <div class="stamp_3"></div><%= msg.stamp_count3.count %>
       <%end%>
     <%else%>
       <%= form_with(model: [@group, @stamp]) do |f| %>
