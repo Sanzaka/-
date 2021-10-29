@@ -103,6 +103,7 @@ describe "ログイン後" do
         # check_2
         expect(page).to have_content "却下"
         click_on "許可"
+        # check_3
         expect(page).to have_content "メンバーを追加しました！"
       end
 

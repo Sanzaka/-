@@ -1,10 +1,11 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_current_user, only:[:edit, :update]
+  before_action :set_group, only: [:show, :edit, :update, :destroy]
 
-  # indexで、グループの操作権限がない場合の処理(operation_right = 0の場合)
+  # showで、グループの操作権限がない場合の処理(operation_right = 0の場合)
   def ensure_current_user
-    unless GroupMember.find_by(user_id: current_user.id, group_id: params[:group_id], operation_right: 1).present?
+    unless GroupMember.find_by(user_id: current_user.id, group_id: params[:id], operation_right: 1).present?
       flash[:alert] = "閲覧権限がありません！"
       redirect_to user_path(current_user)
     end
@@ -16,7 +17,6 @@ class GroupsController < ApplicationController
 
   def show
     # 共通するインスタンス変数
-    @group = Group.find(params[:id])
     @my_group_status = @group.group_members.find_by(group_id: @group, user_id: current_user.id)
     @entry = Entry.new
     @direct_join = GroupMember.new
@@ -75,11 +75,9 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def update
-    @group = Group.find(params[:id])
     if @group.update(group_params)
       redirect_to group_path(@group.id)
     else
@@ -89,7 +87,6 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-    @group = Group.find(params[:id])
     @group.destroy
     flash[:notice] = "グループの削除が完了しました！"
     redirect_to user_path(current_user.id)
@@ -108,6 +105,10 @@ class GroupsController < ApplicationController
 
   def group_member_params
     params.permit(:user_id, :group_id, :operation_right)
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 
 end

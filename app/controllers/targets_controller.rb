@@ -20,10 +20,11 @@ class TargetsController < ApplicationController
   end
 
   def update
+    @group = Group.find(params[:group_id])
     @target = Target.find(params[:id])
     if @target.update(target_params)
       flash[:notice] = "目標を変更しました！"
-      redirect_to group_path(params[:group_id])
+      redirect_to group_path(@group.id)
     else
       flash.now[:alert] = "目標を入力してください！"
       render "edit"

@@ -30,7 +30,7 @@
         <tbody>
           <% @today_targets.each do |target| %>
             <tr>
-              <td><%= attachment_image_tag @user, :image, format: "jpeg", size: "50x50", class: "image", fallback: "user.png" %><br><%= target.user.name %></td>
+              <td><%= attachment_image_tag target.user, :image, format: "jpeg", size: "50x50", class: "image", fallback: "user.png" %><br><%= target.user.name %></td>
               <td>
                 <% if target.user_id == current_user.id %>
                   <%= link_to target.target_content, edit_group_target_path(@group, target.id) %>
@@ -83,7 +83,7 @@
         <tbody>
           <% @today_targets.each do |target| %>
             <tr>
-              <td><%= attachment_image_tag @user, :image, format: "jpeg", size: "50x50", class: "image", fallback: "user.png" %><br><%= target.user.name %></td>
+              <td><%= attachment_image_tag target.user, :image, format: "jpeg", size: "50x50", class: "image", fallback: "user.png" %><br><%= target.user.name %></td>
               <td>
                 <% if target.result_memo_exists?(target) %>
                   <%= target.result.result_memo %>

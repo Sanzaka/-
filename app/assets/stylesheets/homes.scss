@@ -50,17 +50,15 @@
     border: 3px solid;
     background-color: white;
   }
+
   .button{
+    margin: 0 auto;
+    width: 850px;
+    padding-right: 80px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     .edit_link{
-      margin: 0 100px 100px;
-      .blue_btn{
-        width: 200px;
-        height: 100px;
-        line-height: 100px;
-        font-size: 30px;
-      }
+      margin-bottom: 100px;
       .green_btn{
         width: 200px;
         height: 100px;

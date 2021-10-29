@@ -6,13 +6,20 @@
   <div class="intro4"></div>
 
   <h1>さぁ、今すぐ始めよう！</h1>
+
   <div class="button">
+
     <%= link_to  new_user_registration_path, class: "sign_up edit_link" do %>
-      <div class="blue_btn">新規登録</div>
+      <div class="green_btn">新規登録</div>
     <%end%>
+
     <%= link_to  new_user_session_path, class: "sign_in edit_link" do %>
       <div class="green_btn">ログイン</div>
     <%end%>
+
+    <%= link_to  homes_guest_sign_in_path, method: :post, class: "sign_in edit_link" do %>
+      <div class="green_btn">ゲスト</div>
+    <%end%>
+
   </div>
-  <div><%= link_to "ゲストログイン(閲覧用)", homes_guest_sign_in_path, method: :post %></div>
 </div>
