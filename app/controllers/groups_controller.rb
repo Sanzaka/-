@@ -79,6 +79,7 @@ class GroupsController < ApplicationController
 
   def update
     if @group.update(group_params)
+      flash[:notice] = "グループ情報を変更しました！"
       redirect_to group_path(@group.id)
     else
       flash.now[:alert] = "情報の変更に失敗しました！"
