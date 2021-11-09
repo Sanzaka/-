@@ -11,8 +11,7 @@ class Batch::DataCreate
       "釣銭を渡し間違えない", "睡眠不足。仕事中集中する", "全力で仕事に取り組む", "昨日の自分より今日の自分！頑張る！"
     ]
 
-    # user_id1はゲストユーザーなので、作成しないように処理
-    2.upto(5) do |user|
+    1.upto(5) do |user|
       Target.create!(
         user_id: user,
         group_id: 1,
@@ -32,7 +31,7 @@ class Batch::DataCreate
       "ご褒美抜きにしたいと思います"
     ]
 
-    2.upto(5) do |user|
+    1.upto(5) do |user|
       target = Target.find_by(created_at: Time.zone.now.all_day, user_id: user.to_i)
       Result.create!(
         target_id: target.id,
