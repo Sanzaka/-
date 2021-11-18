@@ -15,8 +15,6 @@
 //= require activestorage
 //= require_tree .
 
-//= require chartkick
-//= require Chart.bundle
 //= require Chart.min
 
 //notice, alertは５秒表示

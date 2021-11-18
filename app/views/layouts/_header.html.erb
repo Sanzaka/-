@@ -28,6 +28,9 @@
       <%= link_to root_path ,class: "edit_link" do %>
         <li class="green_btn">TOP</li>
       <%end%>
+      <%= link_to  homes_guest_sign_in_path, method: :post, class: "sign_in edit_link" do %>
+        <li class="green_btn">ゲスト</li>
+      <%end%>
     </ul>
   <%end%>
 
